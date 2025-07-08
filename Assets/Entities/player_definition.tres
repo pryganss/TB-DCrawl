@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=4 format=3 uid="uid://btmebla3rnico"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_me5af"]
+[ext_resource type="Texture2D" uid="uid://dk23yvip3gs3n" path="res://DampDungeons/Animations/Dungeon_HeroMan1.png" id="2_cqhrn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw3sr"]
+atlas = ExtResource("2_cqhrn")
+region = Rect2(27, 6, 17, 25)
+
+[resource]
+script = ExtResource("1_me5af")
+texture = SubResource("AtlasTexture_vw3sr")
+offset = Vector2(-0.5, -9)
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
