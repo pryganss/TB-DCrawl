@@ -1,7 +1,7 @@
 class_name Entity
 extends Sprite2D
 
-var tile_set: TileSet = preload("res://Assets/ts_damp_dungeons.tres")
+var tile_set: TileSet = preload("res://Assets/ts_32rogues.tres")
 
 var grid_position: Vector2i:
 	set(value):
