@@ -3,7 +3,7 @@ extends Component
 
 var BASE_MOVE_DELAY: int:
 	set(value):
-		move_delay = max(value, 1)
+		BASE_MOVE_DELAY = max(value, 1)
 
 var move_delay: int:
 	set(value):
@@ -15,9 +15,12 @@ func _init(component_definition: MovementComponentDefinition):
 	move_delay = component_definition.move_delay
 
 func move(target_position: Vector2i):
-	if (Map.get_tile(target_position).get_custom_data("WALKABLE")
-		and Map.get_entity_at_tile(target_position) is not Entity):
-
+	if Map.get_tile(target_position).get_custom_data("WALKABLE"):
+		var blocker = Map.get_entity_at_tile(target_position)
+		if blocker:
+			if blocker.blocker:
+				return 0
 		entity.grid_position = target_position
+	else: return 0
 
 	return move_delay
