@@ -6,5 +6,8 @@ var offset: Vector2i
 func _init(dx, dy) -> void:
 	offset = Vector2i(dx, dy)
 
-func perform(_game_manager: GameManager, actor: Actor) -> void:
-	actor.move(actor.grid_position + offset)
+func perform(entity: Entity) -> int:
+	var movement_component: MovementComponent = entity.components["MovementComponent"]
+
+	next_turn += movement_component.move(entity.grid_position + offset)
+	return next_turn

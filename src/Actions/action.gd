@@ -1,5 +1,7 @@
 class_name Action
 extends RefCounted
 
-func perform(_game_manager: GameManager, _actor: Actor) -> void:
-	pass
+var next_turn: int = 1
+
+func perform(_entity: Entity) -> int:
+	return next_turn
