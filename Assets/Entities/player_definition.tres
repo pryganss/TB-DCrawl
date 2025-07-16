@@ -1,20 +1,28 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=9 format=3 uid="uid://btmebla3rnico"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=11 format=3 uid="uid://btmebla3rnico"]
 
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_me5af"]
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_vw3sr"]
 [ext_resource type="Texture2D" uid="uid://d0kvthj4gmmtc" path="res://32rogues/rogues.png" id="2_cqhrn"]
 [ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="2_iwrak"]
 [ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="3_y2o4j"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="4_iv1rs"]
 
 [sub_resource type="Resource" id="Resource_y2o4j"]
 script = ExtResource("2_iwrak")
-move_delay = 100
+delay = 100
 metadata/_custom_type_script = "uid://dyy58hynshsip"
 
 [sub_resource type="Resource" id="Resource_iv1rs"]
 script = ExtResource("3_y2o4j")
 max_hp = 5
+attack_delay = 100
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
+
+[sub_resource type="Resource" id="Resource_gkr2g"]
+script = ExtResource("4_iv1rs")
+damage = 1
+delay = 100
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw3sr"]
 atlas = ExtResource("2_cqhrn")
@@ -24,5 +32,5 @@ region = Rect2(64, 64, 32, 31.733)
 script = ExtResource("1_me5af")
 texture = SubResource("AtlasTexture_vw3sr")
 blocker = true
-components = Array[ExtResource("1_vw3sr")]([SubResource("Resource_y2o4j"), SubResource("Resource_iv1rs")])
+components = Array[ExtResource("1_vw3sr")]([SubResource("Resource_y2o4j"), SubResource("Resource_iv1rs"), SubResource("Resource_gkr2g")])
 metadata/_custom_type_script = "uid://b7urauaipbtpo"

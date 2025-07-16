@@ -9,6 +9,6 @@ var delay: int:
 	set(value):
 		delay = max(value, 1)
 
-func _init(component_definition: ComponentDefinition):
+func _init(component_definition: InitiativeComponentDefinition):
 	BASE_DELAY = component_definition.delay
 	delay = BASE_DELAY
