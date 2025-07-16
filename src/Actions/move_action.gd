@@ -1,11 +1,5 @@
 class_name MoveAction
-extends Action
-
-var offset: Vector2i
-
-func _init(acting_entity: Entity, dx: int, dy: int) -> void:
-	super._init(acting_entity)
-	offset = Vector2i(dx, dy)
+extends ActionWithDirection
 
 func perform() -> int:
 	var movement_component: MovementComponent = entity.components["MovementComponent"]
