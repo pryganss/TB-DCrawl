@@ -1,7 +1,5 @@
 class_name MovementComponentDefinition
-extends ComponentDefinition
+extends InitiativeComponentDefinition
 
-@export var move_delay: int
-
-func get_component() -> Component:
+func get_component() -> MovementComponent:
 	return MovementComponent.new(self)

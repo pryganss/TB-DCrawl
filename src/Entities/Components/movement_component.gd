@@ -1,18 +1,9 @@
 class_name MovementComponent
-extends Component
-
-var BASE_MOVE_DELAY: int:
-	set(value):
-		BASE_MOVE_DELAY = max(value, 1)
-
-var move_delay: int:
-	set(value):
-		move_delay = max(value, 1)
+extends InitiativeComponent
 
 func _init(component_definition: MovementComponentDefinition):
+	super._init(component_definition)
 	name = "MovementComponent"
-	BASE_MOVE_DELAY = component_definition.move_delay
-	move_delay = component_definition.move_delay
 
 func move(target_position: Vector2i):
 	if Map.get_tile(target_position).get_custom_data("WALKABLE"):
@@ -23,4 +14,4 @@ func move(target_position: Vector2i):
 		entity.grid_position = target_position
 	else: return 0
 
-	return move_delay
+	return delay
