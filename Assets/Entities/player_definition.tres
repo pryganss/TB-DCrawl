@@ -15,7 +15,6 @@ metadata/_custom_type_script = "uid://dyy58hynshsip"
 [sub_resource type="Resource" id="Resource_iv1rs"]
 script = ExtResource("3_y2o4j")
 max_hp = 5
-attack_delay = 100
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
 
 [sub_resource type="Resource" id="Resource_gkr2g"]

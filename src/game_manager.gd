@@ -15,12 +15,21 @@ var initiative: Dictionary[int, Entity]
 
 func _ready():
 	Map.game_map = game_map
+	var root_room = MapLeaf.new(Vector2i(0, 0), MapGen.MAP_SIZE)
+	root_room.split(4)
+
+	var room = root_room.get_leaves()[0]
+	var room2 = root_room.get_leaves()[1]
+
+	MapGen.draw_room(game_map, room)
+	MapGen.draw_room(game_map, room2)
+
 	Map.entities = entities
-	player = Entity.new(player_definition, Vector2i(5, 5))
+	player = Entity.new(player_definition, Vector2i(2, 2))
 	initiative[100] = player
 	event_handler.player = player
 	entities.add_child(player)
-	entities.add_child(Entity.new(npc_definition, Vector2i(6, 6)))
+	entities.add_child(Entity.new(npc_definition, Vector2i(2, 3)))
 
 func _process(_delta):
 	var entity = get_current_turn()
