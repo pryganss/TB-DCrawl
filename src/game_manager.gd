@@ -15,7 +15,7 @@ var initiative: Dictionary[int, Entity]
 
 func _ready():
 	Map.game_map = game_map
-	var root_room = MapLeaf.new(Vector2i(0, 0), MapGen.MAP_SIZE)
+	var root_room = MapLeaf.new(Vector2i(0, 0), MapGen.MAP_SIZE, null)
 	root_room.split(4)
 
 	for room in root_room.get_leaves(): MapGen.draw_room(game_map, room)
