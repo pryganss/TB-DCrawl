@@ -18,11 +18,7 @@ func _ready():
 	var root_room = MapLeaf.new(Vector2i(0, 0), MapGen.MAP_SIZE)
 	root_room.split(4)
 
-	var room = root_room.get_leaves()[0]
-	var room2 = root_room.get_leaves()[1]
-
-	MapGen.draw_room(game_map, room)
-	MapGen.draw_room(game_map, room2)
+	for room in root_room.get_leaves(): MapGen.draw_room(game_map, room)
 
 	Map.entities = entities
 	player = Entity.new(player_definition, Vector2i(2, 2))
