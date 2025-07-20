@@ -116,6 +116,7 @@ func draw_room(game_map: TileMapLayer) -> Array[Entity]:
 
 		for tile in new_tiles:
 			Map.auto_tiles[tile] = 1
+			Map.astar.set_point_solid(tile)
 
 		Map.update_auto_tiles()
 

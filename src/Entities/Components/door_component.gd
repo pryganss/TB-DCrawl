@@ -17,5 +17,6 @@ func open_door():
 
 	Map.erase_auto_tile(entity.grid_position)
 	Map.game_map.set_cell(entity.grid_position, 0, Map.TILES["FLOOR"])
+	Map.astar.set_point_solid(entity.grid_position, false)
 
 	entity.queue_free()

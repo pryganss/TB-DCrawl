@@ -19,6 +19,12 @@ var wall_tiles: Dictionary[Vector2i, Array]
 
 var auto_tiles: Dictionary[Vector2i, int]
 
+var astar: AStarGrid2D
+
+func setup_pathfinding():
+	astar = AStarGrid2D.new()
+	astar.region = Rect2i(-1, -1, MAP_SIZE.x, MAP_SIZE.y)
+
 func get_tile(grid_position: Vector2i) -> TileData:
 	return game_map.get_cell_tile_data(grid_position)
 
@@ -37,6 +43,8 @@ func update_auto_tiles():
 	game_map.set_cells_terrain_connect(auto_tiles.keys(), 1, 0, false)
 
 func generate_map():
+	setup_pathfinding()
+
 	root_room = MapLeaf.new(Vector2i(), MAP_SIZE)
 	root_room.split(4)
 	rooms = root_room.get_leaves()
