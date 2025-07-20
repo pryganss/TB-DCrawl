@@ -24,6 +24,7 @@ var astar: AStarGrid2D
 func setup_pathfinding():
 	astar = AStarGrid2D.new()
 	astar.region = Rect2i(-1, -1, MAP_SIZE.x, MAP_SIZE.y)
+	astar.update()
 
 func get_tile(grid_position: Vector2i) -> TileData:
 	return game_map.get_cell_tile_data(grid_position)
