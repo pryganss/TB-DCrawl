@@ -12,6 +12,7 @@ const npc_definition: EntityDefinition = preload("res://Assets/Entities/npc_defi
 var t: int = 0
 var initiative: Dictionary[int, Entity]
 
+signal turn_ended
 
 func _ready():
 	Map.game_map = game_map
@@ -34,11 +35,7 @@ func _process(_delta):
 		var action: Action
 		action = event_handler.get_action()
 		if action:
-			var delay = action.perform()
-			if delay:
-				initiative.erase(t)
-				initiative[t + delay] = player
-				t += 1
+			take_turn(action, player)
 	elif entity:
 		pass
 		# initiative.erase(t)
@@ -52,3 +49,28 @@ func get_current_turn() -> Entity:
 		if not entity: t += 1
 
 	return entity
+
+func add_actor(entity: Entity):
+	entities.add_child(entity)
+
+	await turn_ended
+
+	var first_turn = initiative.find_key(player) + 1
+	while true:
+		if initiative[first_turn]:
+			first_turn += 1
+		else:
+			break
+
+func take_turn(action: Action, entity: Entity):
+	var delay = action.perform()
+	if delay:
+		initiative.erase(t)
+		while true:
+			if initiative[t + delay]:
+				delay += 1
+			else:
+				initiative[t + delay] = entity
+				break
+		t += 1
+		turn_ended.emit()
