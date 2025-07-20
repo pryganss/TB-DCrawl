@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://cwai2qjbx6fmh"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_hfqxd"]
+[ext_resource type="Script" uid="uid://crjhb17ek1x2s" path="res://src/Entities/Components/Definitions/door_component_definition.gd" id="2_5nenc"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_hov8n"]
+[ext_resource type="Texture2D" uid="uid://iq4blri35wgm" path="res://32rogues/tiles.png" id="3_hov8n"]
+
+[sub_resource type="Resource" id="Resource_wylmj"]
+script = ExtResource("2_5nenc")
+metadata/_custom_type_script = "uid://crjhb17ek1x2s"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nenc"]
+atlas = ExtResource("3_hov8n")
+region = Rect2(0, 512, 32, 32)
+
+[resource]
+script = ExtResource("2_hov8n")
+texture = SubResource("AtlasTexture_5nenc")
+blocker = false
+components = Array[ExtResource("1_hfqxd")]([SubResource("Resource_wylmj")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
