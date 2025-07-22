@@ -5,7 +5,7 @@ const player_definition: EntityDefinition = preload("res://Assets/Entities/playe
 const npc_definition: EntityDefinition = preload("res://Assets/Entities/npc_definition.tres")
 @onready var player: Entity
 
-@onready var entities: Node2D = $Entities
+@onready var entities: Node = $Entities
 @onready var game_map: TileMapLayer = $Map
 @onready var event_handler: EventHandler = $EventHandler
 
@@ -19,15 +19,26 @@ func _ready():
 
 	Map.generate_map()
 
-	for entity in Map.rooms[0].draw_room(Map.game_map):
-		entities.add_child(entity)
+	for door in Map.rooms[0].draw_room(Map.game_map):
+		entities.add_child(door)
 
 	Map.entities = entities
 	player = Entity.new(player_definition, Vector2i(2, 2))
 	initiative[100] = player
 	event_handler.player = player
+	Map.player = player
 	entities.add_child(player)
-	entities.add_child(Entity.new(npc_definition, Vector2i(2, 3)))
+
+	var player_died: Signal = player.components.get("FighterComponent").died as Signal
+
+	player_died.connect(reset)
+
+	var npc = Entity.new(npc_definition, Vector2i(2, 3))
+	add_actor(npc)
+
+
+func reset(_entity: Entity):
+	get_tree().change_scene_to_file("res://game.tscn")
 
 func _process(_delta):
 	var entity = get_current_turn()
@@ -37,10 +48,8 @@ func _process(_delta):
 		if action:
 			take_turn(action, player)
 	elif entity:
-		pass
-		# initiative.erase(t)
-		# initiative[t + entity.do_turn()] = entity
-		# t += 1
+		var action: Action = entity.components.get("AIComponent").get_action()
+		take_turn(action, entity)
 
 func get_current_turn() -> Entity:
 	var entity: Entity = null
@@ -50,6 +59,10 @@ func get_current_turn() -> Entity:
 
 	return entity
 
+func pop_entity(entity: Entity):
+	initiative.erase(initiative.find_key(entity))
+	entity.queue_free()
+
 func add_actor(entity: Entity):
 	entities.add_child(entity)
 
@@ -57,20 +70,32 @@ func add_actor(entity: Entity):
 
 	var first_turn = initiative.find_key(player) + 1
 	while true:
-		if initiative[first_turn]:
+		if initiative.get(first_turn):
 			first_turn += 1
 		else:
+			initiative[first_turn] = entity
 			break
+
+	var fighter_component = entity.components.get("FighterComponent") as FighterComponent
+	if fighter_component:
+		fighter_component.died.connect(pop_entity)
 
 func take_turn(action: Action, entity: Entity):
 	var delay = action.perform()
-	if delay:
-		initiative.erase(t)
-		while true:
-			if initiative[t + delay]:
-				delay += 1
-			else:
-				initiative[t + delay] = entity
-				break
+	if delay != 0:
+		delay_turn(entity, delay)
 		t += 1
 		turn_ended.emit()
+	elif entity != player:
+		delay_turn(entity, 100)
+		t += 1
+		turn_ended.emit()
+
+func delay_turn(entity: Entity, delay: int):
+	initiative.erase(t)
+	while true:
+		if initiative.get(t + delay):
+			delay += 1
+		else:
+			initiative[t + delay] = entity
+			break

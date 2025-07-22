@@ -11,7 +11,8 @@ const TILES: Dictionary[String, Vector2i] = {
 var remaining_rooms: int = 5
 
 var game_map: TileMapLayer
-var entities: Node2D
+var entities: Node
+var player: Entity
 
 var rooms: Array[MapLeaf]
 var root_room: MapLeaf
@@ -21,9 +22,10 @@ var auto_tiles: Dictionary[Vector2i, int]
 
 var astar: AStarGrid2D
 
+
 func setup_pathfinding():
 	astar = AStarGrid2D.new()
-	astar.region = Rect2i(-1, -1, MAP_SIZE.x, MAP_SIZE.y)
+	astar.region = Rect2i(-1, -1, MAP_SIZE.x + 1, MAP_SIZE.y + 1)
 	astar.update()
 
 func get_tile(grid_position: Vector2i) -> TileData:
@@ -44,6 +46,8 @@ func update_auto_tiles():
 	game_map.set_cells_terrain_connect(auto_tiles.keys(), 1, 0, false)
 
 func generate_map():
+	auto_tiles = {}
+
 	setup_pathfinding()
 
 	root_room = MapLeaf.new(Vector2i(), MAP_SIZE)

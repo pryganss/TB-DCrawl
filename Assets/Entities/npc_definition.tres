@@ -1,14 +1,32 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://cslfjyxoponnu"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=13 format=3 uid="uid://cslfjyxoponnu"]
 
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_otbw6"]
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_7d6be"]
 [ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="2_g8hof"]
+[ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="3_cu2xn"]
 [ext_resource type="Texture2D" uid="uid://bj0qeksp5gh1f" path="res://32rogues/monsters.png" id="3_g8hof"]
+[ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="4_entw1"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="5_entw1"]
 
 [sub_resource type="Resource" id="Resource_cu2xn"]
 script = ExtResource("2_g8hof")
 max_hp = 5
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
+
+[sub_resource type="Resource" id="Resource_hwk6t"]
+script = ExtResource("3_cu2xn")
+delay = 200
+metadata/_custom_type_script = "uid://dyy58hynshsip"
+
+[sub_resource type="Resource" id="Resource_phwv6"]
+script = ExtResource("4_entw1")
+metadata/_custom_type_script = "uid://lv06866ab2mh"
+
+[sub_resource type="Resource" id="Resource_50wf7"]
+script = ExtResource("5_entw1")
+damage = 1
+delay = 100
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tv4g"]
 atlas = ExtResource("3_g8hof")
@@ -18,5 +36,5 @@ region = Rect2(32, 64, 32, 32)
 script = ExtResource("2_7d6be")
 texture = SubResource("AtlasTexture_2tv4g")
 blocker = true
-components = Array[ExtResource("1_otbw6")]([SubResource("Resource_cu2xn")])
+components = Array[ExtResource("1_otbw6")]([SubResource("Resource_cu2xn"), SubResource("Resource_hwk6t"), SubResource("Resource_phwv6"), SubResource("Resource_50wf7")])
 metadata/_custom_type_script = "uid://b7urauaipbtpo"

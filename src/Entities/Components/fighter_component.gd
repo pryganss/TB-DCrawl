@@ -20,4 +20,3 @@ func _init(component_definition: FighterComponentDefinition):
 
 func die():
 	died.emit(entity)
-	entity.queue_free()
