@@ -31,11 +31,12 @@ func setup_pathfinding():
 func get_tile(grid_position: Vector2i) -> TileData:
 	return game_map.get_cell_tile_data(grid_position)
 
-func get_entity_at_tile(grid_position: Vector2i) -> Entity:
+func get_entities_at_tile(grid_position: Vector2i) -> Array[Entity]:
+	var entities_at_tile: Array[Entity] = []
 	for entity in entities.get_children() as Array[Entity]:
 		if entity.grid_position == grid_position:
-			return entity
-	return null
+			entities_at_tile += [entity]
+	return entities_at_tile
 
 func erase_auto_tile(grid_position: Vector2i):
 	auto_tiles.erase(grid_position)
