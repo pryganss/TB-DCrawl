@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=5 format=3 uid="uid://c6c6v8arpsdll"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_r0gqs"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="2_03qck"]
+[ext_resource type="Script" uid="uid://dc7p4trvm8ub" path="res://src/Items/item_definition.gd" id="2_ki73n"]
+
+[sub_resource type="Resource" id="Resource_53xt0"]
+script = ExtResource("2_03qck")
+damage = 5
+delay = 100
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
+
+[resource]
+script = ExtResource("2_ki73n")
+components = Array[ExtResource("1_r0gqs")]([SubResource("Resource_53xt0")])
+metadata/_custom_type_script = "uid://dc7p4trvm8ub"

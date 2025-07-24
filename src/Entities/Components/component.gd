@@ -5,3 +5,6 @@ extends Node
 
 func _init(_component_definition: ComponentDefinition):
 	pass
+
+func _ready():
+	name = get_class()
