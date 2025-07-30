@@ -2,7 +2,7 @@ class_name Entity
 extends Sprite2D
 
 var tile_set: TileSet = preload("res://Assets/ts_32rogues.tres")
-var components: Dictionary[String, Component]
+var components: Dictionary[int, Component]
 var blocker: bool
 
 var grid_position: Vector2i:
@@ -19,5 +19,5 @@ func _init(entity_definition: EntityDefinition, start_pos: Vector2i):
 
 	for component in entity_definition.components:
 		var new_component = component.get_component()
-		components[new_component.name] = new_component
+		components[new_component.TYPE] = new_component
 		add_child(new_component)

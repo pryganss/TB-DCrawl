@@ -1,6 +1,8 @@
 class_name FighterComponent
 extends Component
 
+const TYPE = cpnt.FIGHTER
+
 signal died(entity: Entity)
 
 var MAX_HP: int:
@@ -14,7 +16,6 @@ var hp: int:
 
 
 func _init(component_definition: FighterComponentDefinition):
-	name = "FighterComponent"
 	MAX_HP = component_definition.max_hp
 	hp = MAX_HP
 

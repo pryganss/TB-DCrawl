@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="3_y2o4j"]
 [ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="4_iv1rs"]
 [ext_resource type="Resource" uid="uid://c6c6v8arpsdll" path="res://Assets/Items/sword_definition.tres" id="5_2cuht"]
-[ext_resource type="Script" uid="uid://bho42oe7xr0ir" path="res://src/Entities/Components/Definitions/wield_component_definition.gd" id="6_3rpvs"]
+[ext_resource type="Script" path="res://src/Entities/Components/Definitions/wield_component_definition.gd" id="6_3rpvs"]
 
 [sub_resource type="Resource" id="Resource_y2o4j"]
 script = ExtResource("2_iwrak")

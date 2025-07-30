@@ -1,10 +1,9 @@
 class_name DoorComponent
 extends Component
 
-var room: MapLeaf
+const TYPE = cpnt.DOOR
 
-func _init(_component_definition: DoorComponentDefinition):
-	name = "DoorComponent"
+var room: MapLeaf
 
 func _ready():
 	room = Map.wall_tiles[entity.grid_position].filter(func(r):

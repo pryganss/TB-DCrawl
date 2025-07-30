@@ -1,16 +1,14 @@
 class_name MovementComponent
 extends InitiativeComponent
 
-func _init(component_definition: MovementComponentDefinition):
-	super._init(component_definition)
-	name = "MovementComponent"
+const TYPE = cpnt.MOVEMENT
 
 func move(target_position: Vector2i):
 	var blockers = Map.get_entities_at_tile(target_position)
 	var door_component: DoorComponent
 
 	if blockers.size() == 1:
-		door_component = blockers[0].components.get("DoorComponent")
+		door_component = blockers[0].components.get(cpnt.DOOR)
 
 	if Map.get_tile(target_position).get_custom_data("WALKABLE"):
 		if blockers.any(func(e: Entity): return e.blocker):

@@ -29,7 +29,7 @@ func _ready():
 	Map.player = player
 	entities.add_child(player)
 
-	var player_died: Signal = player.components.get("FighterComponent").died as Signal
+	var player_died: Signal = player.components.get(cpnt.FIGHTER).died as Signal
 
 	player_died.connect(reset)
 
@@ -48,7 +48,7 @@ func _process(_delta):
 		if action:
 			take_turn(action, player)
 	elif entity:
-		var action: Action = entity.components.get("AIComponent").get_action()
+		var action: Action = entity.components.get(cpnt.AI).get_action()
 		take_turn(action, entity)
 
 func get_current_turn() -> Entity:
@@ -76,7 +76,7 @@ func add_actor(entity: Entity):
 			initiative[first_turn] = entity
 			break
 
-	var fighter_component = entity.components.get("FighterComponent") as FighterComponent
+	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
 	if fighter_component:
 		fighter_component.died.connect(pop_entity)
 

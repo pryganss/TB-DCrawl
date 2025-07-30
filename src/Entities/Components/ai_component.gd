@@ -1,18 +1,17 @@
 class_name AIComponent
 extends Component
 
-func _init(_component_definition: AIComponentDefinition):
-	name = "AIComponent"
+const TYPE = cpnt.AI
 
 func get_action() -> Action:
 	var step = _get_step_to_location(Map.player.grid_position)
 
-	if Map.get_entities_at_tile(step).has(Map.player) and entity.components.get("MeleeComponent"):
+	if Map.get_entities_at_tile(step).has(Map.player) and entity.components.get(cpnt.MELEE):
 		return MeleeAction.new(entity,
 			step.x - entity.grid_position.x,
 			step.y - entity.grid_position.y)
 
-	elif entity.components.get("MovementComponent") and not Map.get_entities_at_tile(step):
+	elif entity.components.get(cpnt.MOVEMENT) and not Map.get_entities_at_tile(step):
 		return MoveAction.new(entity,
 			step.x - entity.grid_position.x,
 			step.y - entity.grid_position.y)

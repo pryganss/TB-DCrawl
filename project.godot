@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Map="*res://src/map.gd"
+cpnt="*res://src/Entities/Components/cpnt.gd"
 
 [rendering]
 

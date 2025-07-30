@@ -1,6 +1,8 @@
 class_name MeleeComponent
 extends InitiativeComponent
 
+const TYPE = cpnt.MELEE
+
 var BASE_DAMAGE: int:
 	set(value):
 		BASE_DAMAGE = max(value, 0)
@@ -11,7 +13,6 @@ var damage: int:
 
 func _init(component_definition: MeleeComponentDefinition):
 	super._init(component_definition)
-	name = "MeleeComponent"
 	BASE_DAMAGE = component_definition.damage
 	damage = BASE_DAMAGE
 
