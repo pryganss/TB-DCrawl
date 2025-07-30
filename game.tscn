@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bspx880yfoc6m"]
+[gd_scene load_steps=5 format=3 uid="uid://bspx880yfoc6m"]
 
 [ext_resource type="Script" uid="uid://c1ge13dpv2th8" path="res://src/game_manager.gd" id="1_80nbo"]
 [ext_resource type="TileSet" uid="uid://cxs4k2byg0m2y" path="res://Assets/ts_32rogues.tres" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://cxu2x65ria13m" path="res://src/event_handler.gd" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cjj65xjfefnqx" path="res://src/ui.tscn" id="4_fc0e3"]
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_80nbo")
@@ -22,3 +23,5 @@ zoom = Vector2(2, 2)
 
 [node name="EventHandler" type="Node" parent="."]
 script = ExtResource("3_feb5d")
+
+[node name="UI" parent="." instance=ExtResource("4_fc0e3")]

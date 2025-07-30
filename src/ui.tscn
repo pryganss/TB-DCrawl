@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjj65xjfefnqx"]
+
+[ext_resource type="Script" uid="uid://im7j5nw8n0e0" path="res://src/ui.gd" id="1_731sn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_515sp"]
+bg_color = Color(0.165656, 0.165656, 0.165656, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02y5j"]
+bg_color = Color(0.900678, 0.169044, 0, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_731sn")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -446.0
+offset_top = -77.0
+offset_right = -26.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_515sp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_02y5j")
+show_percentage = false

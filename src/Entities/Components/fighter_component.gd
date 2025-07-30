@@ -4,6 +4,7 @@ extends Component
 const TYPE = cpnt.FIGHTER
 
 signal died(entity: Entity)
+signal damaged()
 
 var MAX_HP: int:
 	set(value):
@@ -13,6 +14,7 @@ var hp: int:
 	set(value):
 		hp = min(value, MAX_HP)
 		if hp <= 0: die()
+		damaged.emit()
 
 
 func _init(component_definition: FighterComponentDefinition):

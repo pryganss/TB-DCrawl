@@ -29,9 +29,12 @@ func _ready():
 	Map.player = player
 	entities.add_child(player)
 
-	var player_died: Signal = player.components.get(cpnt.FIGHTER).died as Signal
+	var plr_fighter_component: FighterComponent = player.components.get(cpnt.FIGHTER) as FighterComponent
 
-	player_died.connect(reset)
+	plr_fighter_component.died.connect(reset)
+	plr_fighter_component.damaged.connect($UI.update_health)
+
+	$UI.update_health()
 
 	var npc = Entity.new(npc_definition, Vector2i(2, 3))
 	add_actor(npc)
