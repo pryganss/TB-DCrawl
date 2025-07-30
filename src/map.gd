@@ -51,6 +51,8 @@ func generate_map():
 
 	setup_pathfinding()
 
+	remaining_rooms = 5
+
 	root_room = MapLeaf.new(Vector2i(), MAP_SIZE)
 	root_room.split(4)
 	rooms = root_room.get_leaves()
