@@ -34,7 +34,10 @@ func _ready():
 	plr_fighter_component.died.connect(reset)
 	plr_fighter_component.damaged.connect($UI.update_health)
 
+	player.components.get(cpnt.WIELD).item_changed.connect($UI.update_item)
+
 	$UI.update_health()
+	$UI.update_item()
 
 	var npc = Entity.new(npc_definition, Vector2i(2, 3))
 	add_actor(npc)

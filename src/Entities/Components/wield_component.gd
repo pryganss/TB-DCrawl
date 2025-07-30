@@ -3,7 +3,13 @@ extends Component
 
 const TYPE = cpnt.WIELD
 
-var item: Item
+signal item_changed
+
+var item: Item:
+	set(value):
+		item = value
+		item_changed.emit()
+
 var cached_components: Array[Component]
 var starting_item: ItemDefinition
 
