@@ -7,4 +7,5 @@ enum {
 	MELEE,
 	MOVEMENT,
 	WIELD,
+	ITEM,
 	}

@@ -22,4 +22,9 @@ func _init(component_definition: FighterComponentDefinition):
 	hp = MAX_HP
 
 func die():
+	var wield_component: WieldComponent = entity.components.get(cpnt.WIELD) as WieldComponent
+
+	if wield_component:
+		wield_component.drop_item()
+
 	died.emit(entity)

@@ -28,6 +28,7 @@ metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 [sub_resource type="Resource" id="Resource_idddg"]
 script = ExtResource("6_3rpvs")
 item_definition = ExtResource("5_2cuht")
+delay = 100
 metadata/_custom_type_script = "uid://bho42oe7xr0ir"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw3sr"]

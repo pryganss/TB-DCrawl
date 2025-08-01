@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://im7j5nw8n0e0" path="res://src/ui.gd" id="1_731sn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_515sp"]
-bg_color = Color(0.165656, 0.165656, 0.165656, 1)
+bg_color = Color(0.790625, 0, 0.13581, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02y5j"]
-bg_color = Color(0.900678, 0.169044, 0, 1)
+bg_color = Color(0.319036, 0.67483, 0.451924, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_731sn"]
 bg_color = Color(0.164706, 0.164706, 0.164706, 1)

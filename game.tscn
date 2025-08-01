@@ -9,9 +9,11 @@
 script = ExtResource("1_80nbo")
 
 [node name="Map" type="TileMapLayer" parent="."]
+z_index = -2
 tile_set = ExtResource("2_e2o6t")
 
 [node name="Decor" type="TileMapLayer" parent="."]
+z_index = -2
 tile_set = ExtResource("2_e2o6t")
 
 [node name="Entities" type="Node" parent="."]
@@ -25,3 +27,6 @@ zoom = Vector2(2, 2)
 script = ExtResource("3_feb5d")
 
 [node name="UI" parent="." instance=ExtResource("4_fc0e3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1

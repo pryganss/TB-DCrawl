@@ -1,5 +1,5 @@
 class_name WieldComponentDefinition
-extends  ComponentDefinition
+extends InitiativeComponentDefinition
 
 @export var item_definition: ItemDefinition
 
