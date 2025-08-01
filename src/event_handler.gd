@@ -15,4 +15,7 @@ func get_action() -> Action:
 	elif Input.is_action_just_pressed("move_right"):
 		action = BumpAction.new(player, 1, 0)
 
+	elif Input.is_action_just_pressed("drop"):
+		action = DropAction.new(player)
+
 	return action

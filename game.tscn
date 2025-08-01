@@ -27,6 +27,3 @@ zoom = Vector2(2, 2)
 script = ExtResource("3_feb5d")
 
 [node name="UI" parent="." instance=ExtResource("4_fc0e3")]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
