@@ -20,7 +20,7 @@ func _ready():
 	entity.ready.connect(entity_ready)
 
 func entity_ready():
-	equip_item(starting_item)
+	if starting_item: equip_item(starting_item)
 
 func equip_item(item_definition: ItemDefinition):
 	assert(not item)
@@ -35,7 +35,7 @@ func equip_item(item_definition: ItemDefinition):
 		entity.add_child(component)
 		entity.components[component.TYPE] = component
 
-func unequip_item():
+func _unequip_item():
 	for component in item.components:
 		entity.components.erase(component.TYPE)
 		component.queue_free()
