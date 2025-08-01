@@ -78,13 +78,14 @@ func add_actor(entity: Entity):
 
 	await turn_ended
 
-	var first_turn = initiative.find_key(player) + 1
-	while true:
-		if initiative.get(first_turn):
-			first_turn += 1
-		else:
-			initiative[first_turn] = entity
-			break
+	if not entity.is_queued_for_deletion():
+		var first_turn = initiative.find_key(player) + 1
+		while true:
+			if initiative.get(first_turn):
+				first_turn += 1
+			else:
+				initiative[first_turn] = entity
+				break
 
 func take_turn(action: Action, entity: Entity):
 	var delay = action.perform()
