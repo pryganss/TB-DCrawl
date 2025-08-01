@@ -34,7 +34,7 @@ func equip_item(item_definition: ItemDefinition):
 		var base_component: Component = entity.components.get(component.TYPE)
 		if base_component:
 			cached_components += [base_component]
-			base_component.queue_free()
+			entity.remove_child(base_component)
 
 		entity.add_child(component)
 		entity.components[component.TYPE] = component
