@@ -65,12 +65,16 @@ func get_current_turn() -> Entity:
 
 	return entity
 
-func pop_entity(entity: Entity):
-	initiative.erase(initiative.find_key(entity))
+func pop_actor(entity: Entity):
+	if initiative.find_key(entity): initiative.erase(initiative.find_key(entity))
 	entity.queue_free()
 
 func add_actor(entity: Entity):
 	entities.add_child(entity)
+
+	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+	if fighter_component:
+		fighter_component.died.connect(pop_actor)
 
 	await turn_ended
 
@@ -81,10 +85,6 @@ func add_actor(entity: Entity):
 		else:
 			initiative[first_turn] = entity
 			break
-
-	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
-	if fighter_component:
-		fighter_component.died.connect(pop_entity)
 
 func take_turn(action: Action, entity: Entity):
 	var delay = action.perform()
