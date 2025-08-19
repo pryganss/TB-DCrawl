@@ -44,12 +44,13 @@ func equip_item(new_item: Item) -> int:
 func _unequip_item():
 	for component in item.components:
 		entity.components.erase(component.TYPE)
-		component.queue_free()
+		entity.remove_child(component)
 	item = null
 
 	for component in cached_components:
-		entity.add_child(component)
+		cached_components.erase(component)
 		entity.components[component.TYPE] = component
+		entity.add_child(component)
 
 func drop_item():
 	if not item:
