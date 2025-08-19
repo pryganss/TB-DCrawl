@@ -17,7 +17,7 @@ signal turn_ended
 func _ready():
 	Map.game_map = game_map
 
-	Map.generate_map()
+	MapGen.generate_map()
 
 	for door in Map.rooms[0].draw_room(Map.game_map):
 		entities.add_child(door)

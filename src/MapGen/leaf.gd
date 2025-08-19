@@ -64,13 +64,13 @@ func split(remaining: int) -> void:
 	var split_ratio = rng.randf_range(0.25, 0.75)
 	var split_across = size.y * rng.randf_range(0.6, 1.4) >= size.x * rng.randf_range(0.6, 1.4)
 
-	if split_across and floori(size.y * 0.5) >= Map.MIN_ROOM_SIZE.y:
+	if split_across and floori(size.y * 0.5) >= MapGen.MIN_ROOM_SIZE.y:
 		var height =int(size.y * split_ratio)
 		child_0 = MapLeaf.new(grid_position, Vector2i(size.x, height))
 		child_1 = MapLeaf.new(
 			Vector2i(grid_position.x, grid_position.y + height),
 			Vector2i(size.x, size.y - height))
-	elif not split_across and floori(size.x * 0.5) >= Map.MIN_ROOM_SIZE.x:
+	elif not split_across and floori(size.x * 0.5) >= MapGen.MIN_ROOM_SIZE.x:
 		var width = int(size.x * split_ratio)
 		child_0 = MapLeaf.new(grid_position, Vector2i(width, size.y))
 		child_1 = MapLeaf.new(
@@ -83,8 +83,8 @@ func split(remaining: int) -> void:
 		child_0.split(remaining - 1)
 		child_1.split(remaining - 1)
 	else:
-		if child_0.size.length() > Map.MAX_ROOM_SIZE.length(): child_0.split(0)
-		if child_1.size.length() > Map.MAX_ROOM_SIZE.length(): child_1.split(0)
+		if child_0.size.length() > MapGen.MAX_ROOM_SIZE.length(): child_0.split(0)
+		if child_1.size.length() > MapGen.MAX_ROOM_SIZE.length(): child_1.split(0)
 
 func draw_room(game_map: TileMapLayer) -> Array[Entity]:
 	var new_tiles: Array[Vector2i] = []
