@@ -23,13 +23,13 @@ func _ready():
 	entity.ready.connect(entity_ready)
 
 func entity_ready():
-	if starting_item: equip_item(starting_item)
+	if starting_item: equip_item(starting_item.get_item())
 
-func equip_item(item_definition: ItemDefinition):
+func equip_item(new_item: Item) -> int:
 	if item:
 		return 0
 
-	item = item_definition.get_item()
+	item = new_item
 	for component in item.components:
 		var base_component: Component = entity.components.get(component.TYPE)
 		if base_component:
