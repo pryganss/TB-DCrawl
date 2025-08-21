@@ -76,6 +76,8 @@ func add_actor(entity: Entity):
 	if fighter_component:
 		fighter_component.died.connect(pop_actor)
 
+	if not entity.components.get(cpnt.AI): return
+
 	await turn_ended
 
 	if not entity.is_queued_for_deletion():
