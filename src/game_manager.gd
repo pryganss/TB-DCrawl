@@ -2,7 +2,6 @@ class_name GameManager
 extends Node2D
 
 const player_definition: EntityDefinition = preload("res://Assets/Entities/player_definition.tres")
-const npc_definition: EntityDefinition = preload("res://Assets/Entities/npc_definition.tres")
 @onready var player: Entity
 
 @onready var entities: Node = $Entities
@@ -38,9 +37,6 @@ func _ready():
 
 	$UI.update_health()
 	$UI.update_item()
-
-	var npc = Entity.new(npc_definition, Vector2i(2, 3))
-	add_actor(npc)
 
 
 func reset(_entity: Entity):
