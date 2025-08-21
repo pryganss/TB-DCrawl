@@ -1,7 +1,6 @@
 class_name GameManager
 extends Node2D
 
-const player_definition: EntityDefinition = preload("res://Assets/Entities/player_definition.tres")
 @onready var player: Entity
 
 @onready var entities: Node = $Entities
@@ -15,14 +14,9 @@ signal turn_ended
 
 func _ready():
 	Map.game_map = game_map
-
-	MapGen.generate_map()
-
-	for door in Map.rooms[0].draw_room(Map.game_map):
-		entities.add_child(door)
-
 	Map.entities = entities
-	player = Entity.new(player_definition, Vector2i(2, 2))
+
+	player = MapGen.generate_map()
 	initiative[100] = player
 	event_handler.player = player
 	Map.player = player

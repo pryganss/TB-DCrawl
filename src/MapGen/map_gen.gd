@@ -14,7 +14,7 @@ static func setup_pathfinding():
 func _init():
 	assert(false)
 
-static func generate_map():
+static func generate_map() -> Entity:
 	Map.auto_tiles = {}
 
 	setup_pathfinding()
@@ -24,3 +24,13 @@ static func generate_map():
 	Map.rooms = root_room.get_leaves()
 	Map.wall_tiles = MapLeaf.get_wall_tiles(Map.rooms)
 	MapLeaf.set_wall_tiles(Map.wall_tiles)
+
+	var starting_room: MapLeaf = Map.rooms.pick_random()
+
+	for door in starting_room.draw_room(Map.game_map):
+		Map.entities.add_child(door)
+
+	return Entity.new(player_definition, Vector2i(
+		randi_range(starting_room.grid_position.x, starting_room.grid_position.x + starting_room.size.x - 2),
+		randi_range(starting_room.grid_position.y, starting_room.grid_position.y + starting_room.size.y - 2)
+		))
