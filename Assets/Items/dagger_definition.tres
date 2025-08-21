@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=6 format=3 uid="uid://bjvo1nlhi1g0u"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_et60n"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="2_2ix13"]
+[ext_resource type="Script" uid="uid://dc7p4trvm8ub" path="res://src/Items/item_definition.gd" id="2_mankp"]
+[ext_resource type="Texture2D" uid="uid://1g1i42wlfv1l" path="res://Assets/default_item.tres" id="3_2ix13"]
+
+[sub_resource type="Resource" id="Resource_hdhok"]
+script = ExtResource("2_2ix13")
+damage = Array[String](["1d4"])
+mod = 1
+delay = 85
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
+
+[resource]
+script = ExtResource("2_mankp")
+components = Array[ExtResource("1_et60n")]([SubResource("Resource_hdhok")])
+texture = ExtResource("3_2ix13")
+metadata/_custom_type_script = "uid://dc7p4trvm8ub"
