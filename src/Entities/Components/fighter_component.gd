@@ -3,6 +3,8 @@ extends Component
 
 const TYPE = cpnt.FIGHTER
 
+var level: int
+
 signal died(entity: Entity)
 signal damaged()
 
@@ -20,6 +22,7 @@ var hp: int:
 func _init(component_definition: FighterComponentDefinition):
 	MAX_HP = component_definition.max_hp
 	hp = MAX_HP
+	level = component_definition.level
 
 func die():
 	var wield_component: WieldComponent = entity.components.get(cpnt.WIELD) as WieldComponent
