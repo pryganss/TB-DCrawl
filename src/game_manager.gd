@@ -15,6 +15,7 @@ signal turn_ended
 func _ready():
 	Map.game_map = game_map
 	Map.entities = entities
+	Map.add_entity = Callable(self, "add_entity")
 
 	player = MapGen.generate_map()
 	initiative[100] = player
@@ -61,8 +62,9 @@ func pop_actor(entity: Entity):
 	if initiative.find_key(entity): initiative.erase(initiative.find_key(entity))
 	entity.queue_free()
 
-func add_actor(entity: Entity):
+func add_entity(entity: Entity):
 	entities.add_child(entity)
+	print(entity)
 
 	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
 	if fighter_component:

@@ -1,6 +1,7 @@
 class_name MapGen
 extends Object
 
+const map_definition = preload("res://Assets/MapGen/map_definition.tres")
 const player_definition = preload("res://Assets/Entities/player_definition.tres")
 
 const MIN_ROOM_SIZE = Vector2i(6, 5)
@@ -19,6 +20,8 @@ static func generate_map() -> Entity:
 
 	setup_pathfinding()
 
+	Map.remaining_rooms = 5
+
 	var root_room = MapLeaf.new(Vector2i(), Map.MAP_SIZE)
 	root_room.split(Map.remaining_rooms)
 	Map.rooms = root_room.get_leaves()
@@ -34,3 +37,25 @@ static func generate_map() -> Entity:
 		randi_range(starting_room.grid_position.x, starting_room.grid_position.x + starting_room.size.x - 2),
 		randi_range(starting_room.grid_position.y, starting_room.grid_position.y + starting_room.size.y - 2)
 		))
+
+static func new_room(room: MapLeaf) -> Array[Entity]:
+	var entities: Array[Entity] = []
+
+	var room_entities: Array[EntityDefinition] = map_definition.room_types.pick_random().features
+	var open_tiles: Array[Vector2i] = []
+
+	for x in range(room.grid_position.x, room.grid_position.x + room.size.x - 1):
+		for y in range(room.grid_position.y, room.grid_position.y + room.size.y - 1):
+			open_tiles += [Vector2i(x, y)]
+
+	while open_tiles && room_entities:
+		var tile = open_tiles.pick_random()
+		var entity = room_entities.pick_random()
+
+		open_tiles.erase(tile)
+		room_entities.erase(entity)
+
+		entities += [Entity.new(entity, tile)]
+
+	print(entities)
+	return entities

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="MapDefinition" load_steps=13 format=3 uid="uid://ddbaxflw41ici"]
+
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="1_lsfte"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_btaov"]
+[ext_resource type="Script" uid="uid://bhm3bql3b201q" path="res://src/MapGen/map_definition.gd" id="2_uxa6t"]
+[ext_resource type="Resource" uid="uid://cslfjyxoponnu" path="res://Assets/Entities/Enemies/slime_definition.tres" id="3_btaov"]
+[ext_resource type="Resource" uid="uid://dtjl2trrdk5il" path="res://Assets/Entities/Enemies/goblin_definition.tres" id="4_3tu3c"]
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="5_t1xci"]
+[ext_resource type="Resource" uid="uid://bjvo1nlhi1g0u" path="res://Assets/Items/dagger_definition.tres" id="6_hodp2"]
+[ext_resource type="Script" uid="uid://cvvmd65n8jknf" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="7_72k7e"]
+
+[sub_resource type="Resource" id="Resource_whrd8"]
+script = ExtResource("1_lsfte")
+features = Array[ExtResource("2_btaov")]([ExtResource("3_btaov"), ExtResource("3_btaov")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
+
+[sub_resource type="Resource" id="Resource_d2dis"]
+script = ExtResource("7_72k7e")
+item_definition = ExtResource("6_hodp2")
+metadata/_custom_type_script = "uid://cvvmd65n8jknf"
+
+[sub_resource type="Resource" id="Resource_f6drv"]
+script = ExtResource("2_btaov")
+blocker = false
+components = Array[ExtResource("5_t1xci")]([SubResource("Resource_d2dis")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
+
+[sub_resource type="Resource" id="Resource_k6w2r"]
+script = ExtResource("1_lsfte")
+features = Array[ExtResource("2_btaov")]([ExtResource("4_3tu3c"), SubResource("Resource_f6drv")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
+
+[resource]
+script = ExtResource("2_uxa6t")
+room_types = Array[ExtResource("1_lsfte")]([SubResource("Resource_whrd8"), SubResource("Resource_k6w2r")])

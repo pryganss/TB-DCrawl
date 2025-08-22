@@ -12,7 +12,9 @@ func _ready():
 func open_door():
 	if not room.placed:
 		for door in room.draw_room(Map.game_map):
-			Map.entities.add_child(door)
+			Map.add_entity.call(door)
+		for new_entity in MapGen.new_room(room):
+			Map.add_entity.call(new_entity)
 
 	Map.erase_auto_tile(entity.grid_position)
 	Map.game_map.set_cell(entity.grid_position, 0, Map.TILES["FLOOR"])
