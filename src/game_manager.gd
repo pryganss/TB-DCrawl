@@ -64,7 +64,6 @@ func pop_actor(entity: Entity):
 
 func add_entity(entity: Entity):
 	entities.add_child(entity)
-	print(entity)
 
 	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
 	if fighter_component:
