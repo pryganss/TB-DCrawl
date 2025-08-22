@@ -7,7 +7,8 @@
 
 [sub_resource type="Resource" id="Resource_53xt0"]
 script = ExtResource("2_03qck")
-damage = 5
+damage = Array[String](["1d2"])
+mod = 0
 delay = 100
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 

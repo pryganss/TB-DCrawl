@@ -32,11 +32,13 @@ func _ready():
 	$UI.update_health()
 	$UI.update_item()
 
+	$Camera2D.player = player
+
 
 func reset(_entity: Entity):
 	get_tree().change_scene_to_file("res://game.tscn")
 
-func _process(_delta):
+func _physics_process(_delta):
 	var entity = get_current_turn()
 	if entity == player:
 		var action: Action
