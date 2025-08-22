@@ -41,7 +41,7 @@ static func generate_map() -> Entity:
 static func new_room(room: MapLeaf) -> Array[Entity]:
 	var entities: Array[Entity] = []
 
-	var room_entities: Array[EntityDefinition] = map_definition.room_types.pick_random().features
+	var room_entities: Array[EntityDefinition] = map_definition.room_types.pick_random().features.duplicate()
 	var open_tiles: Array[Vector2i] = []
 
 	for x in range(room.grid_position.x, room.grid_position.x + room.size.x - 1):
@@ -57,5 +57,4 @@ static func new_room(room: MapLeaf) -> Array[Entity]:
 
 		entities += [Entity.new(entity, tile)]
 
-	print(entities)
 	return entities
