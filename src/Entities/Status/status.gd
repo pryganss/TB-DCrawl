@@ -25,11 +25,14 @@ func _init(affected_entity: Entity, triggers: Array[String]):
 
 	_triggers = triggers
 
+	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+
 	for trigger in triggers:
-		if entity.components.get(cpnt.FIGHTER).status.get(trigger):
-			entity.components.get(cpnt.FIGHTER).status[trigger] += [self]
+		if fighter_component.status.get(trigger):
+			if not fighter_component.status.get(trigger).any(func(s): return typeof(s) ==  typeof(self)):
+				fighter_component.status[trigger] += [self]
 		else:
-			entity.components.get(cpnt.FIGHTER).status[trigger] = [self]
+			fighter_component.status[trigger] = [self]
 
 func apply(_args: Array):
 	assert(false)
