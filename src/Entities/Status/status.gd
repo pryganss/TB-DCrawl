@@ -50,6 +50,11 @@ func extend_status(new_duration: int):
 	for trigger in _triggers:
 		var status_index: int = fighter_component.status.get(trigger).find_custom(func(s): return typeof(s) ==  typeof(self))
 		if fighter_component.status.get(trigger)[status_index]:
-			fighter_component.status.get(trigger)[status_index].duration = new_duration
+			if new_duration == -1:
+				fighter_component.status.get(trigger)[status_index].duration = new_duration
+			else: fighter_component.status.get(trigger)[status_index].duration = max(new_duration,
+				fighter_component.status.get(trigger)[status_index].duration)
 		else:
-			duration = new_duration
+			if new_duration == -1:
+				duration = new_duration
+			else: duration = max(new_duration, duration)
