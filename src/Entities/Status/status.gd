@@ -16,10 +16,20 @@ var duration: int = -1:
 
 		duration = value
 
+var _triggers: Array[String]
+
 var entity: Entity
 
-func _init(affected_entity: Entity):
+func _init(affected_entity: Entity, triggers: Array[String]):
 	entity = affected_entity
+
+	_triggers = triggers
+
+	for trigger in triggers:
+		if entity.components.get(cpnt.FIGHTER).status.get(trigger):
+			entity.components.get(cpnt.FIGHTER).status[trigger] += [self]
+		else:
+			entity.components.get(cpnt.FIGHTER).status[trigger] = [self]
 
 func apply(_args: Array):
 	assert(false)
@@ -28,4 +38,5 @@ func _decrement():
 	duration -= 1
 
 func clear_status():
-	assert(false)
+	for trigger in _triggers:
+		entity.components.get(cpnt.FIGHTER).status[trigger].erase(self)
