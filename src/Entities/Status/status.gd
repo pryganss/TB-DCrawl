@@ -43,3 +43,13 @@ func _decrement():
 func clear_status():
 	for trigger in _triggers:
 		entity.components.get(cpnt.FIGHTER).status[trigger].erase(self)
+
+func extend_status(new_duration: int):
+	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+
+	for trigger in _triggers:
+		var status_index: int = fighter_component.status.get(trigger).find_custom(func(s): return typeof(s) ==  typeof(self))
+		if fighter_component.status.get(trigger)[status_index]:
+			fighter_component.status.get(trigger)[status_index].duration = new_duration
+		else:
+			duration = new_duration
