@@ -13,7 +13,7 @@ func get_action() -> Action:
 			step.x - entity.grid_position.x,
 			step.y - entity.grid_position.y)
 
-	elif entity.components.get(cpnt.MOVEMENT) and not Map.get_entities_at_tile(step):
+	elif entity.components.get(cpnt.MOVEMENT) and not Map.get_entities_at_tile(step).any(func(e): return e.blocker):
 		return MoveAction.new(entity,
 			step.x - entity.grid_position.x,
 			step.y - entity.grid_position.y)
