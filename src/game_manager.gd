@@ -10,8 +10,6 @@ extends Node2D
 var t: int = 0
 var initiative: Dictionary[int, Entity]
 
-signal turn_ended
-
 func _ready():
 	Map.game_map = game_map
 	Map.entities = entities
@@ -54,7 +52,9 @@ func get_current_turn() -> Entity:
 	var entity: Entity = null
 	while not entity:
 		entity = initiative.get(t)
-		if not entity: t += 1
+		if not entity:
+			t += 1
+			Map.new_game_tick.emit()
 
 	return entity
 
@@ -71,7 +71,7 @@ func add_entity(entity: Entity):
 
 	if not entity.components.get(cpnt.AI): return
 
-	await turn_ended
+	await player.components.get(cpnt.FIGHTER).turn_ended
 
 	if not entity.is_queued_for_deletion():
 		var first_turn = initiative.find_key(player) + 1
@@ -87,11 +87,13 @@ func take_turn(action: Action, entity: Entity):
 	if delay != 0:
 		delay_turn(entity, delay)
 		t += 1
-		turn_ended.emit()
+		entity.components.get(cpnt.FIGHTER).turn_ended.emit()
+		Map.new_game_tick.emit()
 	elif entity != player:
 		delay_turn(entity, 100)
 		t += 1
-		turn_ended.emit()
+		entity.components.get(cpnt.FIGHTER).turn_ended.emit()
+		Map.new_game_tick.emit()
 
 func delay_turn(entity: Entity, delay: int):
 	initiative.erase(t)

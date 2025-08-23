@@ -4,6 +4,8 @@ extends Component
 const TYPE = cpnt.AI
 
 func get_action() -> Action:
+	assert(entity.components.get(cpnt.FIGHTER))
+
 	var step = _get_step_to_location(Map.player.grid_position)
 
 	if Map.get_entities_at_tile(step).has(Map.player) and entity.components.get(cpnt.MELEE):

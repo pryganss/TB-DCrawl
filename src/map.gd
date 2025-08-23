@@ -1,5 +1,7 @@
 extends Node
 
+signal new_game_tick
+
 const TILES: Dictionary[String, Vector2i] = {
 	"FLOOR": Vector2i(0, 11),
 	}
