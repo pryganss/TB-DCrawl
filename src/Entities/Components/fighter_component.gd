@@ -33,6 +33,8 @@ func _init(component_definition: FighterComponentDefinition):
 	turn_ended.connect(turn_end)
 
 func die():
+	status = {}
+
 	var wield_component: WieldComponent = entity.components.get(cpnt.WIELD) as WieldComponent
 
 	if wield_component:
@@ -42,5 +44,5 @@ func die():
 
 func turn_end():
 	if status.get("END"):
-		for stat in status.get("END") as Array[Status]:
-			stat.apply([])
+		for st in status.get("END") as Array[Status]:
+			st.apply([])

@@ -9,6 +9,10 @@
 script = ExtResource("2_2ix13")
 damage = Array[String](["1d3"])
 mod = 0
+status = Array[Dictionary]([{
+"duration": -1,
+"status": ""
+}])
 delay = 85
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 

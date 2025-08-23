@@ -5,10 +5,14 @@
 [ext_resource type="Script" uid="uid://dc7p4trvm8ub" path="res://src/Items/item_definition.gd" id="2_ki73n"]
 [ext_resource type="Texture2D" uid="uid://bs2jaln6ch3ba" path="res://32rogues/items.png" id="4_03qck"]
 
-[sub_resource type="Resource" id="Resource_53xt0"]
+[sub_resource type="Resource" id="Resource_03qck"]
 script = ExtResource("2_03qck")
 damage = Array[String](["2d4"])
 mod = 0
+status = Array[Dictionary]([{
+"duration": -1,
+"status": ""
+}])
 delay = 100
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
@@ -18,6 +22,6 @@ region = Rect2(32, 0, 32, 32)
 
 [resource]
 script = ExtResource("2_ki73n")
-components = Array[ExtResource("1_r0gqs")]([SubResource("Resource_53xt0")])
+components = Array[ExtResource("1_r0gqs")]([SubResource("Resource_03qck")])
 texture = SubResource("AtlasTexture_53xt0")
 metadata/_custom_type_script = "uid://dc7p4trvm8ub"
