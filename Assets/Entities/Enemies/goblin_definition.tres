@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="2_wmocx"]
 [ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="3_0myqd"]
 [ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="4_3d7ys"]
-[ext_resource type="Resource" uid="uid://bjvo1nlhi1g0u" path="res://Assets/Items/dagger_definition.tres" id="5_8a85f"]
+[ext_resource type="Resource" uid="uid://bjvo1nlhi1g0u" path="res://Assets/Items/dagger_definition.tres" id="5_0myqd"]
 [ext_resource type="Script" uid="uid://bho42oe7xr0ir" path="res://src/Entities/Components/Definitions/wield_component_definition.gd" id="6_4xfho"]
 [ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="7_lcnro"]
 [ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="8_0myqd"]
@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
 
 [sub_resource type="Resource" id="Resource_x6bvn"]
 script = ExtResource("6_4xfho")
-item_definition = ExtResource("5_8a85f")
+item_definition = ExtResource("5_0myqd")
 delay = 100
 metadata/_custom_type_script = "uid://bho42oe7xr0ir"
 

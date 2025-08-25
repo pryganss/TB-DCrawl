@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://cvvmd65n8jknf" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="2_btfcn"]
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_dycfv"]
 
-[sub_resource type="Resource" id="Resource_iuemy"]
+[sub_resource type="Resource" id="Resource_dycfv"]
 script = ExtResource("2_btfcn")
 metadata/_custom_type_script = "uid://cvvmd65n8jknf"
 
 [resource]
 script = ExtResource("2_dycfv")
 blocker = false
-components = Array[ExtResource("1_2myu6")]([SubResource("Resource_iuemy")])
+components = Array[ExtResource("1_2myu6")]([SubResource("Resource_dycfv")])
 metadata/_custom_type_script = "uid://b7urauaipbtpo"
