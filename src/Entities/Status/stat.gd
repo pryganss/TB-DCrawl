@@ -1,4 +1,6 @@
 extends Node
 
-var STATUS: Dictionary[String, Callable] = {
+enum STATUS_ENUM { }
+
+var STATUS: Dictionary[int, Callable] = {
 	}

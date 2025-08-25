@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=13 format=3 uid="uid://cslfjyxoponnu"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=14 format=3 uid="uid://cslfjyxoponnu"]
 
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_i4i6i"]
 [ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="2_1bn04"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="4_d5pv0"]
 [ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="5_p2eih"]
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="6_00wux"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="6_1bn04"]
 [ext_resource type="Texture2D" uid="uid://bj0qeksp5gh1f" path="res://32rogues/monsters.png" id="7_a2r2c"]
 
 [sub_resource type="Resource" id="Resource_cu2xn"]
@@ -27,10 +28,7 @@ metadata/_custom_type_script = "uid://lv06866ab2mh"
 script = ExtResource("5_p2eih")
 damage = Array[String](["1d4"])
 mod = 0
-status = Array[Dictionary]([{
-"duration": -1,
-"status": ""
-}])
+status = Array[ExtResource("6_1bn04")]([])
 delay = 100
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
