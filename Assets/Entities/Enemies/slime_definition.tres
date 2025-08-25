@@ -27,6 +27,10 @@ metadata/_custom_type_script = "uid://lv06866ab2mh"
 script = ExtResource("5_p2eih")
 damage = Array[String](["1d4"])
 mod = 0
+status = Array[Dictionary]([{
+"duration": -1,
+"status": ""
+}])
 delay = 100
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
