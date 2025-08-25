@@ -18,7 +18,7 @@ func get_action() -> Action:
 			step.x - entity.grid_position.x,
 			step.y - entity.grid_position.y)
 
-	else: return WaitAction.new(entity)
+	else: return WaitAction.new()
 
 
 func _get_step_to_location(target: Vector2i) -> Vector2i:

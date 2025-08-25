@@ -20,4 +20,7 @@ func get_action() -> Action:
 	elif Input.is_action_just_pressed("grab"):
 		action = GrabAction.new(player)
 
+	elif Input.is_action_just_pressed("wait"):
+		action = WaitAction.new()
+
 	return action

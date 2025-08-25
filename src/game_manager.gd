@@ -83,17 +83,19 @@ func add_entity(entity: Entity):
 				break
 
 func take_turn(action: Action, entity: Entity):
-	var delay = action.perform()
-	if delay != 0:
-		delay_turn(entity, delay)
+	if action is WaitAction:
+		pass_turn(entity)
 		t += 1
 		entity.components.get(cpnt.FIGHTER).turn_ended.emit()
-		Map.new_game_tick.emit()
-	elif entity != player:
-		delay_turn(entity, 100)
-		t += 1
-		entity.components.get(cpnt.FIGHTER).turn_ended.emit()
-		Map.new_game_tick.emit()
+	else:
+		var delay = action.perform()
+		if delay != 0:
+			delay_turn(entity, delay)
+			t += 1
+			entity.components.get(cpnt.FIGHTER).turn_ended.emit()
+			Map.new_game_tick.emit()
+		elif entity != player:
+			assert(false)
 
 func delay_turn(entity: Entity, delay: int):
 	initiative.erase(t)
@@ -103,3 +105,12 @@ func delay_turn(entity: Entity, delay: int):
 		else:
 			initiative[t + delay] = entity
 			break
+
+func pass_turn(entity):
+	var keys = initiative.keys()
+	keys.sort()
+	if keys.size() > 1:
+		var next_turn = keys[1]
+		delay_turn(entity, next_turn - t)
+	else:
+		delay_turn(entity, 100)

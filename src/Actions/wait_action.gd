@@ -1,6 +1,9 @@
 class_name WaitAction
 extends Action
 
+func _init(): pass
+
 func perform() -> int:
-	next_turn += 100
+	assert(false)
+
 	return next_turn
