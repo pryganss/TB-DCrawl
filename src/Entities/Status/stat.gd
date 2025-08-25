@@ -1,3 +1,4 @@
+class_name STAT
 extends Node
 
 enum STATUS_ENUM { }

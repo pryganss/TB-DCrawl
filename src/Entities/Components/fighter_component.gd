@@ -24,6 +24,7 @@ var hp: int:
 		if hp <= 0: die()
 		damaged.emit()
 
+var stance: Stance
 
 func _init(component_definition: FighterComponentDefinition):
 	MAX_HP = component_definition.max_hp
