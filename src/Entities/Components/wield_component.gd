@@ -61,4 +61,4 @@ func drop_item():
 
 	_unequip_item()
 
-	Map.entities.add_child(item_entity)
+	Map.add_entity.call(item_entity)
