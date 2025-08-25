@@ -3,7 +3,7 @@ extends RefCounted
 
 var duration: int = -1:
 	set(value):
-		assert(value >= -1)
+		assert(value >= -1, "Invalid duration set on Status object")
 
 		if value == 0:
 			clear_status()
@@ -35,7 +35,7 @@ func _init(affected_entity: Entity, triggers: Array[String]):
 			fighter_component.status[trigger] = [self]
 
 func apply(_args: Array):
-	assert(false)
+	assert(false, "Tried to apply unapplyable status")
 
 func _decrement():
 	duration -= 1

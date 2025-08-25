@@ -95,7 +95,7 @@ func take_turn(action: Action, entity: Entity):
 			entity.components.get(cpnt.FIGHTER).turn_ended.emit()
 			Map.new_game_tick.emit()
 		elif entity != player:
-			assert(false)
+			assert(false, "AIComponent returned invalid action")
 
 func delay_turn(entity: Entity, delay: int):
 	initiative.erase(t)

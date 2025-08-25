@@ -13,7 +13,7 @@ static func setup_pathfinding():
 	Map.astar.update()
 
 func _init():
-	assert(false)
+	assert(false, "Tried to create instance of static class")
 
 static func generate_map() -> Entity:
 	Map.auto_tiles = {}

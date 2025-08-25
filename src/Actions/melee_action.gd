@@ -3,7 +3,7 @@ extends ActionWithDirection
 
 func perform() -> int:
 	var melee_component: MeleeComponent = entity.components.get(cpnt.MELEE) as MeleeComponent
-	assert(melee_component)
+	assert(melee_component, "Entity tried to execture MeleeActon without MeleeComponent")
 
 	var target_entity: Entity
 	for e in Map.get_entities_at_tile(entity.grid_position + offset):

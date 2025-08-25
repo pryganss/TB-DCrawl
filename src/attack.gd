@@ -2,7 +2,7 @@ class_name Attack
 extends Object
 
 func _init():
-	assert(false)
+	assert(false, "Tried to create instance of static class")
 
 static func to_hit(level_diff: int) -> bool:
 	return randf() < 0.5 * (tanh((level_diff * 0.25) + 0.3) + 1)

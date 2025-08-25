@@ -4,7 +4,7 @@ extends Component
 const TYPE = cpnt.AI
 
 func get_action() -> Action:
-	assert(entity.components.get(cpnt.FIGHTER))
+	assert(entity.components.get(cpnt.FIGHTER), "Entity without FighterComponent requested action from AIComponent")
 
 	var step = _get_step_to_location(Map.player.grid_position)
 
