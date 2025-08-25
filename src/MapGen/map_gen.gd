@@ -10,6 +10,7 @@ const MAX_ROOM_SIZE = Vector2i(8, 7)
 static func setup_pathfinding():
 	Map.astar = AStarGrid2D.new()
 	Map.astar.region = Rect2i(-1, -1, Map.MAP_SIZE.x + 1, Map.MAP_SIZE.y + 1)
+	Map.astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	Map.astar.update()
 
 func _init():
