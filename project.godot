@@ -21,6 +21,10 @@ Map="*res://src/map.gd"
 stat="*res://src/Entities/Status/stat.gd"
 Initiative="*res://src/initiative.gd"
 
+[gui]
+
+theme/custom_font="uid://cijissfx584po"
+
 [input]
 
 move_right={
