@@ -6,7 +6,6 @@ var entity: Entity
 
 func _init(stance_definition: StanceDefinition, stanced_entity: Entity):
 	entity = stanced_entity
-	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
 
 	if stance_definition.status:
 		for st in stance_definition.status:
