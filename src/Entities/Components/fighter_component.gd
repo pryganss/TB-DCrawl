@@ -5,9 +5,7 @@ const TYPE = cpnt.FIGHTER
 
 var level: int
 
-## Status Trigers
-# END = on affected entities turn end
-var status: Dictionary[String, Array]
+var status: Array[Status] = []
 
 signal turn_ended
 
@@ -31,10 +29,8 @@ func _init(component_definition: FighterComponentDefinition):
 	hp = MAX_HP
 	level = component_definition.level
 
-	turn_ended.connect(turn_end)
-
 func die():
-	status = {}
+	status = []
 
 	var wield_component: WieldComponent = entity.components.get(cpnt.WIELD) as WieldComponent
 
@@ -42,8 +38,3 @@ func die():
 		wield_component.drop_item()
 
 	died.emit(entity)
-
-func turn_end():
-	if status.get("END"):
-		for st in status.get("END") as Array[Status]:
-			st.apply([])

@@ -29,6 +29,8 @@ func _ready():
 
 	$Camera2D.player = player
 
+	plr_fighter_component.stance = Stance.new(preload("res://Assets/Stances/test_stance.tres"), player)
+
 
 func reset(_entity: Entity):
 	get_tree().change_scene_to_file("res://game.tscn")

@@ -26,7 +26,6 @@ func hit(target: FighterComponent) -> int:
 		target.hp -= Attack.damage(damage, mod)
 		if status:
 			for st in status:
-				var new_status = stat.STATUS[st.status].call(target.entity) as Status
-				new_status.extend_status(st.duration)
+				stat.STATUS[st.status].call(target.entity, st.duration)
 
 	return delay

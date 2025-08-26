@@ -46,3 +46,5 @@ text = "This is a very long description. In fact so long it wraps to the next li
 horizontal_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

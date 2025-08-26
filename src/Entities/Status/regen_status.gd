@@ -3,9 +3,8 @@ extends Status
 
 var counter: int = 50
 
-func _init(affected_entity):
-	super._init(affected_entity, ["test"])
-	Map.new_game_tick.connect(apply)
+func _init(affected_entity, start_duration):
+	super._init(affected_entity, [Map.new_game_tick], start_duration)
 
 func apply(_args = []):
 	if counter >= 50:

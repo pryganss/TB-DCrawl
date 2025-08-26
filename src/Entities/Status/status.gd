@@ -16,23 +16,27 @@ var duration: int = -1:
 
 		duration = value
 
-var _triggers: Array[String]
+var _triggers: Array[Signal]
 
 var entity: Entity
 
-func _init(affected_entity: Entity, triggers: Array[String]):
+func _init(affected_entity: Entity, triggers: Array[Signal], start_duration = -1):
 	entity = affected_entity
 
 	_triggers = triggers
 
 	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+	for status in fighter_component.status as Array[Status]:
+		if typeof(status) == typeof(self):
+			extend_status(start_duration)
+			return
+
+	fighter_component.status.append(self)
+
+	duration = start_duration
 
 	for trigger in triggers:
-		if fighter_component.status.get(trigger):
-			if not fighter_component.status.get(trigger).any(func(s): return typeof(s) ==  typeof(self)):
-				fighter_component.status[trigger] += [self]
-		else:
-			fighter_component.status[trigger] = [self]
+		trigger.connect(apply)
 
 func apply(_args: Array):
 	assert(false, "Tried to apply unapplyable status")
@@ -42,7 +46,11 @@ func _decrement():
 
 func clear_status():
 	for trigger in _triggers:
-		entity.components.get(cpnt.FIGHTER).status[trigger].erase(self)
+		trigger.disconnect(apply)
+
+	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+	fighter_component.status.erase(self)
+
 
 func extend_status(new_duration: int):
 	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
