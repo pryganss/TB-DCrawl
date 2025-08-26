@@ -31,6 +31,7 @@ func _ready():
 
 
 func reset(_entity: Entity):
+	Initiative.reset()
 	get_tree().change_scene_to_file("res://game.tscn")
 
 func _physics_process(_delta):
