@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://s64uv048me4k"]
+
+[ext_resource type="Script" uid="uid://dxtt1bwd4h8f1" path="res://src/UI/stance_button.gd" id="1_nau8j"]
+
+[node name="Stance Button" type="Button"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_nau8j")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 16.0
+offset_right = -19.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 44
+text = "Test Title"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Description" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
+text = "This is a very long description. In fact so long it wraps to the next line!"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
