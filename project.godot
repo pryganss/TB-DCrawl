@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Map="*res://src/map.gd"
 stat="*res://src/Entities/Status/stat.gd"
+Initiative="*res://src/initiative.gd"
 
 [input]
 

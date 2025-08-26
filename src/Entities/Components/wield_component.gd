@@ -61,4 +61,4 @@ func drop_item():
 
 	_unequip_item()
 
-	Map.add_entity.call(item_entity)
+	Initiative.add_entity(item_entity)

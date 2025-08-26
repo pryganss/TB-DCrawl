@@ -7,8 +7,6 @@ const TILES: Dictionary[String, Vector2i] = {
 	}
 const MAP_SIZE = Vector2i(25, 25)
 
-var add_entity: Callable
-
 var remaining_rooms: int = 5
 
 var game_map: TileMapLayer
