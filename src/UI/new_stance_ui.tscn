@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqunwk6631m77"]
+[gd_scene load_steps=3 format=3 uid="uid://bqunwk6631m77"]
 
 [ext_resource type="PackedScene" uid="uid://s64uv048me4k" path="res://src/UI/stance_button.tscn" id="1_jitkx"]
+[ext_resource type="Script" uid="uid://6p7t43nydgfg" path="res://src/UI/new_stance_ui.gd" id="1_m2084"]
 
 [node name="New Stance UI" type="Panel"]
 anchors_preset = 14
@@ -13,6 +14,7 @@ offset_right = -37.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m2084")
 
 [node name="Stance Buttons" type="HBoxContainer" parent="."]
 layout_mode = 1

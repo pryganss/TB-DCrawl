@@ -11,6 +11,7 @@ func get_current_turn() -> Entity:
 			t += 1
 			Map.new_game_tick.emit()
 
+	entity.components.get(cpnt.FIGHTER).turn_started.emit()
 	return entity
 
 func pop_actor(entity: Entity):

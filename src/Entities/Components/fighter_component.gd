@@ -8,6 +8,7 @@ var level: int
 var status: Array[Status] = []
 
 signal turn_ended
+signal turn_started
 
 signal died(entity: Entity)
 signal damaged()

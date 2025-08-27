@@ -1,3 +1,4 @@
+class_name StanceButton
 extends Button
 
 var offered_stance: StanceDefinition

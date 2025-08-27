@@ -2,8 +2,11 @@ class_name EventHandler
 extends Node
 
 var player: Entity
+var disabled = false
 
 func get_action() -> Action:
+	if disabled: return null
+
 	var action: Action = null
 
 	if Input.is_action_just_pressed("move_up"):

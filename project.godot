@@ -21,6 +21,10 @@ Map="*res://src/map.gd"
 stat="*res://src/Entities/Status/stat.gd"
 Initiative="*res://src/initiative.gd"
 
+[editor]
+
+export/convert_text_resources_to_binary=false
+
 [gui]
 
 theme/custom_font="uid://cijissfx584po"
