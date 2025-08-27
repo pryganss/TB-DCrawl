@@ -9,7 +9,7 @@ extends Node2D
 @onready var stance_files: PackedStringArray = ResourceLoader.list_directory("res://Assets/Stances/")
 @export var stances: Array[StanceDefinition] = []
 
-var stance_timer: = 50000
+var stance_timer: = 5000
 
 func _ready():
 	Map.game_map = game_map
@@ -39,6 +39,8 @@ func _ready():
 
 	for file in stance_files:
 		stances.append(load("res://Assets/Stances/" + file))
+
+	_new_stance()
 
 func reset(_entity: Entity):
 	Initiative.reset()
@@ -74,4 +76,4 @@ func _decrement_stance():
 	if stance_timer <= 0:
 		await player.components.get(cpnt.FIGHTER).turn_started
 		_new_stance()
-		stance_timer = 50000
+		stance_timer = 5000

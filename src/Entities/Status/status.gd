@@ -16,26 +16,34 @@ var duration: int = -1:
 
 		duration = value
 
-var _triggers: Array[Signal]
+var _triggers: Array
 
 var entity: Entity
 
-func _init(affected_entity: Entity, triggers: Array[Signal], start_duration = -1):
-	entity = affected_entity
-
-	_triggers = triggers
-
-	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+func _init(affected_entity: Entity, start_duration = -1):
+	var fighter_component = affected_entity.components.get(cpnt.FIGHTER) as FighterComponent
 	for status in fighter_component.status as Array[Status]:
 		if typeof(status) == typeof(self):
 			extend_status(start_duration)
 			return
 
+	entity = affected_entity
+
 	fighter_component.status.append(self)
 
 	duration = start_duration
 
-	for trigger in triggers:
+	reconnect()
+
+func _get_triggers() -> Array[Signal]:
+	return _triggers
+
+func reconnect():
+	for trigger in _triggers:
+		trigger.disconnect(apply)
+
+	_triggers = _get_triggers()
+	for trigger in _triggers:
 		trigger.connect(apply)
 
 func apply(_args: Array):
@@ -56,12 +64,12 @@ func extend_status(new_duration: int):
 	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
 
 	for trigger in _triggers:
-		var status_index: int = fighter_component.status.get(trigger).find_custom(func(s): return typeof(s) ==  typeof(self))
-		if fighter_component.status.get(trigger)[status_index]:
+		var status_index: int = fighter_component.status.find_custom(func(s): return typeof(s) ==  typeof(self))
+		if fighter_component.status[status_index]:
 			if new_duration == -1:
-				fighter_component.status.get(trigger)[status_index].duration = new_duration
-			else: fighter_component.status.get(trigger)[status_index].duration = max(new_duration,
-				fighter_component.status.get(trigger)[status_index].duration)
+				fighter_component.status[status_index].duration = new_duration
+			else: fighter_component.status[status_index].duration = max(new_duration,
+				fighter_component.status[status_index].duration)
 		else:
 			if new_duration == -1:
 				duration = new_duration

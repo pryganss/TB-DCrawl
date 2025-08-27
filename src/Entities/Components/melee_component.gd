@@ -10,6 +10,8 @@ var mod: int
 
 var status: Array[StatusDefinition]
 
+signal attack_started(_args: Array)
+
 func _init(component_definition: MeleeComponentDefinition):
 	super._init(component_definition)
 	BASE_DAMAGE = component_definition.damage
@@ -22,10 +24,14 @@ func hit(target: FighterComponent) -> int:
 	var fighter_component: FighterComponent = entity.components.get(cpnt.FIGHTER)
 	if not fighter_component: return 0
 
+	attack_started.emit([target])
+
 	if Attack.to_hit(fighter_component.level - target.level):
 		target.hp -= Attack.damage(damage, mod)
 		if status:
 			for st in status:
 				stat.STATUS[st.status].call(target.entity, st.duration)
 
+	damage = BASE_DAMAGE
+	mod = BASE_MOD
 	return delay

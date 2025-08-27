@@ -9,7 +9,7 @@ func _init(stance_definition: StanceDefinition, stanced_entity: Entity):
 
 	if stance_definition.status:
 		for st in stance_definition.status:
-			stat.STATUS[st.status].call(entity, st.duration)
+			status.append(stat.STATUS[st.status].call(entity, st.duration))
 
 func change_stance(stance_definition: StanceDefinition):
 	for st in status:

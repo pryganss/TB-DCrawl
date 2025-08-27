@@ -30,6 +30,10 @@ func _init(component_definition: FighterComponentDefinition):
 	hp = MAX_HP
 	level = component_definition.level
 
+func refresh_status():
+	for st in status:
+		st.reconnect()
+
 func die():
 	status = []
 

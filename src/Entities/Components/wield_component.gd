@@ -37,7 +37,11 @@ func equip_item(new_item: Item) -> int:
 			entity.remove_child(base_component)
 
 		entity.add_child(component)
+		component.entity = entity
 		entity.components[component.TYPE] = component
+
+	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+	fighter_component.refresh_status()
 
 	return delay
 
@@ -51,6 +55,9 @@ func _unequip_item():
 		cached_components.erase(component)
 		entity.components[component.TYPE] = component
 		entity.add_child(component)
+
+	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
+	fighter_component.refresh_status()
 
 func drop_item():
 	if not item:

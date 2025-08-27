@@ -4,7 +4,10 @@ extends Status
 var counter: int = 50
 
 func _init(affected_entity, start_duration):
-	super._init(affected_entity, [Map.new_game_tick], start_duration)
+	super._init(affected_entity, start_duration)
+
+func _get_triggers():
+	return [Map.new_game_tick]
 
 func apply(_args = []):
 	if counter >= 50:
