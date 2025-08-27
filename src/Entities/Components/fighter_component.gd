@@ -10,6 +10,8 @@ var status: Array[Status] = []
 signal turn_ended
 signal turn_started
 
+signal damage_started
+
 signal died(entity: Entity)
 signal damaged()
 
@@ -23,12 +25,27 @@ var hp: int:
 		if hp <= 0: die()
 		damaged.emit()
 
+var BASE_ARMOR: int:
+	set(value):
+		armor = max(value, 0)
+
+var armor: int:
+	set(value):
+		armor = max(value, 0)
+
 var stance: Stance
 
 func _init(component_definition: FighterComponentDefinition):
 	MAX_HP = component_definition.max_hp
 	hp = MAX_HP
 	level = component_definition.level
+	BASE_ARMOR = component_definition.armor
+	armor = BASE_ARMOR
+
+func damage(value):
+	damage_started.emit([])
+	hp -= ceili(value / (1.0 + (armor / 25.0)))
+	armor = BASE_ARMOR
 
 func refresh_status():
 	for st in status:
