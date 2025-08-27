@@ -54,7 +54,7 @@ func _decrement():
 
 func clear_status():
 	for trigger in _triggers:
-		trigger.disconnect(apply)
+		if trigger.is_connected(apply): trigger.disconnect(apply)
 
 	var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
 	fighter_component.status.erase(self)
