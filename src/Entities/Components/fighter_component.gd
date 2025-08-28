@@ -45,9 +45,9 @@ func _init(component_definition: FighterComponentDefinition):
 
 func damage(value):
 	damage_started.emit({"amount": value, "entity": entity}, "damage_started")
-	var reduced_damage = ceili(value / (1.0 + (armor / 25.0)))
-	damage_ended.emit({"amount": reduced_damage, "entity": entity}, "damage_ended")
+	var reduced_damage = ceili(value / (1.0 + (armor / 10.0)))
 	hp -= reduced_damage
+	damage_ended.emit({"amount": reduced_damage, "entity": entity}, "damage_ended")
 	armor = BASE_ARMOR
 
 func refresh_status():
