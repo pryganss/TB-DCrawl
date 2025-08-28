@@ -136,13 +136,19 @@ func get_random_doors():
 
 	while Map.remaining_rooms > 0 and neighbors.size() > 0 and valid_tiles.size() > 0:
 		var tile = valid_tiles.pick_random()
+		var current_room: MapLeaf
 
 		neighbors = neighbors.filter(func(r): return not walls[tile].has(r))
-		for room in walls[tile] as Array[MapLeaf]: room.has_door = true
+		for room in walls[tile] as Array[MapLeaf]:
+			if not room.has_door:
+				current_room = room
+				room.has_door = true
 		valid_tiles = valid_tiles.filter(func(t):
 			return neighbors.any(func(r): return walls[t].has(r)))
 
 		doors += [Entity.new(door_definition, tile)]
 		Map.remaining_rooms -= 1
+		if Map.remaining_rooms == 0:
+			Map.last_room = current_room
 
 	return doors

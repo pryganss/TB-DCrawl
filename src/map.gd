@@ -7,7 +7,11 @@ const TILES: Dictionary[String, Vector2i] = {
 	}
 const MAP_SIZE = Vector2i(25, 25)
 
+const EXIT_ROOM: RoomDefinition = preload("res://Assets/MapGen/Rooms/exit_room.tres")
+
 var remaining_rooms: int = 5
+
+var last_room: MapLeaf
 
 var game_map: TileMapLayer
 var entities: Node
