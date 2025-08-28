@@ -21,3 +21,8 @@ func _init(entity_definition: EntityDefinition, start_pos: Vector2i):
 		var new_component = component.get_component()
 		components[new_component.TYPE] = new_component
 		add_child(new_component)
+
+func flash(color: Color):
+	modulate = color
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color.WHITE
