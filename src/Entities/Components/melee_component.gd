@@ -24,10 +24,10 @@ func hit(target: FighterComponent) -> int:
 	var fighter_component: FighterComponent = entity.components.get(cpnt.FIGHTER)
 	if not fighter_component: return 0
 
-	attack_started.emit([target])
+	attack_started.emit({"target": target}, "attack_started")
 
 	if Attack.to_hit(fighter_component.level - target.level):
-		target.hp -= Attack.damage(damage, mod)
+		target.damage(Attack.damage(damage, mod))
 		if status:
 			for st in status:
 				stat.STATUS[st.status].call(target.entity, st.duration)

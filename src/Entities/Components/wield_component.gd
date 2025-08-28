@@ -8,7 +8,7 @@ signal item_changed
 var item: Item:
 	set(value):
 		item = value
-		item_changed.emit()
+		item_changed.emit({"item": item}, "item_changed")
 
 var cached_components: Array[Component]
 var starting_item: ItemDefinition

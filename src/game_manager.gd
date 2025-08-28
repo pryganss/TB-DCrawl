@@ -71,7 +71,7 @@ func _new_stance():
 
 	$"UI/New Stance UI".new_stance(stance_1, stance_2)
 
-func _decrement_stance():
+func _decrement_stance(_args, _signal_name):
 	stance_timer -= 1
 	if stance_timer <= 0:
 		await player.components.get(cpnt.FIGHTER).turn_started

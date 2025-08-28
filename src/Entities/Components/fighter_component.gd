@@ -13,7 +13,8 @@ signal turn_started
 signal damage_started
 
 signal died(entity: Entity)
-signal damaged()
+signal damage_ended()
+signal damaged
 
 var MAX_HP: int:
 	set(value):
@@ -43,8 +44,10 @@ func _init(component_definition: FighterComponentDefinition):
 	armor = BASE_ARMOR
 
 func damage(value):
-	damage_started.emit([])
-	hp -= ceili(value / (1.0 + (armor / 25.0)))
+	damage_started.emit({"amount": value, "entity": entity}, "damage_started")
+	var reduced_damage = ceili(value / (1.0 + (armor / 25.0)))
+	damage_ended.emit({"amount": reduced_damage, "entity": entity}, "damage_ended")
+	hp -= reduced_damage
 	armor = BASE_ARMOR
 
 func refresh_status():

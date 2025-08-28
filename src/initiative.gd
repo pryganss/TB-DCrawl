@@ -9,9 +9,9 @@ func get_current_turn() -> Entity:
 		entity = initiative.get(t)
 		if not entity:
 			t += 1
-			Map.new_game_tick.emit()
+			Map.new_game_tick.emit({}, "new_game_tick")
 
-	entity.components.get(cpnt.FIGHTER).turn_started.emit()
+	entity.components.get(cpnt.FIGHTER).turn_started.emit({"entity": entity}, "turn_started")
 	return entity
 
 func pop_actor(entity: Entity):
@@ -42,14 +42,14 @@ func take_turn(action: Action, entity: Entity):
 	if action is WaitAction:
 		pass_turn(entity)
 		t += 1
-		entity.components.get(cpnt.FIGHTER).turn_ended.emit()
+		entity.components.get(cpnt.FIGHTER).turn_ended.emit({"entity": entity}, "turn_ended")
 	else:
 		var delay = action.perform()
 		if delay != 0:
 			delay_turn(entity, delay)
 			t += 1
-			entity.components.get(cpnt.FIGHTER).turn_ended.emit()
-			Map.new_game_tick.emit()
+			entity.components.get(cpnt.FIGHTER).turn_ended.emit({"entity": entity}, "turn_ended")
+			Map.new_game_tick.emit({}, "new_game_tick")
 		elif entity != Map.player:
 			assert(false, "AIComponent returned invalid action")
 

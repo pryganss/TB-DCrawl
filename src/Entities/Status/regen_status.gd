@@ -9,7 +9,7 @@ func _init(affected_entity, start_duration):
 func _get_triggers():
 	return [Map.new_game_tick]
 
-func apply(_args = []):
+func apply(_args = {}, _signal_name = "unnamed_signal"):
 	if counter >= 50:
 		var fighter_component: FighterComponent = entity.components.get(cpnt.FIGHTER) as FighterComponent
 		fighter_component.hp += 1
