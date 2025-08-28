@@ -45,7 +45,7 @@ func _ready():
 	_new_stance()
 
 func reset(_entity: Entity):
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://src/game.tscn")
 
 func _physics_process(_delta):
 	var entity = Initiative.get_current_turn()
