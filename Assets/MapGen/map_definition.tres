@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dtjl2trrdk5il" path="res://Assets/Entities/Enemies/goblin_definition.tres" id="4_3tu3c"]
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="5_t1xci"]
 [ext_resource type="Resource" uid="uid://bjvo1nlhi1g0u" path="res://Assets/Items/dagger_definition.tres" id="6_hodp2"]
-[ext_resource type="Script" uid="uid://cvvmd65n8jknf" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="7_72k7e"]
+[ext_resource type="Script" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="7_72k7e"]
 
 [sub_resource type="Resource" id="Resource_whrd8"]
 script = ExtResource("1_lsfte")
