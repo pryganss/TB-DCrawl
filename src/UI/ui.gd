@@ -9,7 +9,7 @@ func update_health():
 
 	%HealthBar.value = float(fighter_component.hp) / float(fighter_component.MAX_HP) * 100.0
 
-func update_item():
+func update_item(_args, _signal_name):
 	if not wield_component:
 		wield_component = Map.player.components.get(cpnt.WIELD) as WieldComponent
 
