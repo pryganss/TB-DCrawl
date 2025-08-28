@@ -15,7 +15,9 @@ func _ready():
 	Map.game_map = game_map
 	Map.entities = entities
 
+	Initiative.reset()
 	player = MapGen.generate_map()
+
 	Initiative.initiative[100] = player
 	event_handler.player = player
 	Map.player = player
@@ -43,7 +45,6 @@ func _ready():
 	_new_stance()
 
 func reset(_entity: Entity):
-	Initiative.reset()
 	get_tree().change_scene_to_file("res://game.tscn")
 
 func _physics_process(_delta):
