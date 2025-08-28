@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TB-DCrawl"
-run/main_scene="uid://bspx880yfoc6m"
+run/main_scene="uid://eupl5j8tipqr"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
