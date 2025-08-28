@@ -63,6 +63,7 @@ func delay_turn(entity: Entity, delay: int):
 			break
 
 func pass_turn(entity):
+	if not is_instance_valid(entity): return
 	var keys = initiative.keys()
 	keys.sort()
 	if keys.size() > 1:
