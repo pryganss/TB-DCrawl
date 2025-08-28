@@ -54,6 +54,7 @@ func take_turn(action: Action, entity: Entity):
 			assert(false, "AIComponent returned invalid action")
 
 func delay_turn(entity: Entity, delay: int):
+	if not is_instance_valid(entity): return
 	initiative.erase(t)
 	while true:
 		if initiative.get(t + delay):
@@ -63,7 +64,6 @@ func delay_turn(entity: Entity, delay: int):
 			break
 
 func pass_turn(entity):
-	if not is_instance_valid(entity): return
 	var keys = initiative.keys()
 	keys.sort()
 	if keys.size() > 1:
