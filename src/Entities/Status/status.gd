@@ -46,7 +46,7 @@ func reconnect():
 	for trigger in _triggers:
 		trigger.connect(apply)
 
-func apply(_args: Dictionary, signal_name: String = "unnamed_signal"):
+func apply(_args: Dictionary, _signal_name: String = "unnamed_signal"):
 	assert(false, "Tried to apply unapplyable status")
 
 func _decrement(_args, _signal_name):
