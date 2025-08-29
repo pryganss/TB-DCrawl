@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://bsg5dp604ynt2"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_4rimq"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_27b67"]
+[ext_resource type="Script" uid="uid://crp2xvqqpu8wn" path="res://src/Entities/Components/Definitions/stair_component_definition.gd" id="2_t2aix"]
+[ext_resource type="Texture2D" uid="uid://iq4blri35wgm" path="res://32rogues/tiles.png" id="4_w124x"]
+
+[sub_resource type="Resource" id="Resource_ugqts"]
+script = ExtResource("2_t2aix")
+metadata/_custom_type_script = "uid://crp2xvqqpu8wn"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dq7q"]
+atlas = ExtResource("4_w124x")
+region = Rect2(224, 512, 32, 32)
+
+[resource]
+script = ExtResource("2_27b67")
+texture = SubResource("AtlasTexture_4dq7q")
+blocker = false
+components = Array[ExtResource("1_4rimq")]([SubResource("Resource_ugqts")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"

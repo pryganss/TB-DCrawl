@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MapDefinition" load_steps=12 format=3 uid="uid://d4uqf65dp3nb"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_6go7k"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_66umw"]
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="2_tw2vr"]
+[ext_resource type="Resource" uid="uid://k3qc7cjgnukg" path="res://Assets/Items/sword_definition.tres" id="3_dna5y"]
+[ext_resource type="Script" uid="uid://bhm3bql3b201q" path="res://src/MapGen/map_definition.gd" id="3_ty1gh"]
+[ext_resource type="Script" uid="uid://cvvmd65n8jknf" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="4_fqtji"]
+[ext_resource type="Resource" uid="uid://bl56wabahx8md" path="res://Assets/Entities/Enemies/slime_definition.tres" id="6_rwel0"]
+
+[sub_resource type="Resource" id="Resource_iwluf"]
+script = ExtResource("4_fqtji")
+item_definition = ExtResource("3_dna5y")
+metadata/_custom_type_script = "uid://cvvmd65n8jknf"
+
+[sub_resource type="Resource" id="Resource_egq8j"]
+script = ExtResource("1_6go7k")
+blocker = false
+components = Array[ExtResource("2_tw2vr")]([SubResource("Resource_iwluf")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
+
+[sub_resource type="Resource" id="Resource_hsblp"]
+script = ExtResource("2_66umw")
+features = Array[ExtResource("1_6go7k")]([SubResource("Resource_egq8j")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
+
+[sub_resource type="Resource" id="Resource_e7802"]
+script = ExtResource("2_66umw")
+features = Array[ExtResource("1_6go7k")]([ExtResource("6_rwel0")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
+
+[resource]
+script = ExtResource("3_ty1gh")
+room_types = Array[ExtResource("2_66umw")]([SubResource("Resource_e7802")])
+exit_room = SubResource("Resource_hsblp")
+number_of_rooms = 3
+metadata/_custom_type_script = "uid://bhm3bql3b201q"
