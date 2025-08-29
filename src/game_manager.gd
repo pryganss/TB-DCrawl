@@ -7,7 +7,7 @@ extends Node2D
 @onready var stance_files: PackedStringArray = ResourceLoader.list_directory("res://Assets/Stances/")
 @export var stances: Array[StanceDefinition] = []
 
-var stance_timer: = 5000
+var stance_timer: = 0
 
 func _ready():
 	Map.game_map = game_map
@@ -33,7 +33,7 @@ func connect_player():
 
 	$"UI/New Stance UI".event_handler = event_handler
 
-	Map.new_game_tick.connect(_decrement_stance)
+	Map.new_room.connect(_decrement_stance)
 	_new_stance()
 
 func reset(_entity: Entity):
@@ -65,9 +65,10 @@ func _new_stance():
 
 	$"UI/New Stance UI".new_stance(stance_1, stance_2)
 
+	stance_timer = randi_range(4, 8)
+
 func _decrement_stance(_args, _signal_name):
 	stance_timer -= 1
 	if stance_timer <= 0:
 		await Map.player.components.get(cpnt.FIGHTER).turn_started
 		_new_stance()
-		stance_timer = 5000

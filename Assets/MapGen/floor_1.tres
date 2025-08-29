@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="MapDefinition" load_steps=6 format=3 uid="uid://22fwbp6biutp"]
+[gd_resource type="Resource" script_class="MapDefinition" load_steps=7 format=3 uid="uid://22fwbp6biutp"]
 
-[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="1_lsfte"]
-[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_btaov"]
-[ext_resource type="Script" uid="uid://bhm3bql3b201q" path="res://src/MapGen/map_definition.gd" id="2_uxa6t"]
-[ext_resource type="Resource" uid="uid://bl56wabahx8md" path="res://Assets/Entities/Enemies/slime_definition.tres" id="3_btaov"]
+[ext_resource type="Resource" uid="uid://bblyhxwxq6wn8" path="res://Assets/MapGen/Rooms/exit_room.tres" id="1_ag1l8"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_ahtfd"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="3_fpoim"]
+[ext_resource type="Resource" uid="uid://bl56wabahx8md" path="res://Assets/Entities/Enemies/slime_definition.tres" id="4_puw6v"]
+[ext_resource type="Script" uid="uid://bhm3bql3b201q" path="res://src/MapGen/map_definition.gd" id="5_dx3m0"]
 
 [sub_resource type="Resource" id="Resource_btaov"]
-script = ExtResource("1_lsfte")
-features = Array[ExtResource("2_btaov")]([ExtResource("3_btaov")])
+script = ExtResource("2_ahtfd")
+features = Array[ExtResource("3_fpoim")]([ExtResource("4_puw6v")])
 metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
 
 [resource]
-script = ExtResource("2_uxa6t")
-room_types = Array[ExtResource("1_lsfte")]([SubResource("Resource_btaov")])
+script = ExtResource("5_dx3m0")
+room_types = Array[ExtResource("2_ahtfd")]([SubResource("Resource_btaov")])
+exit_room = ExtResource("1_ag1l8")
+number_of_rooms = 10
 metadata/_custom_type_script = "uid://bhm3bql3b201q"

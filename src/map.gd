@@ -13,7 +13,12 @@ signal map_ready
 
 var current_floor = 0
 
-var remaining_rooms: int = 5
+signal new_room(args: Dictionary, signal_name: String)
+
+var remaining_rooms: int = 5:
+	set(value):
+		new_room.emit({}, "new_room")
+		remaining_rooms = value
 
 var last_room: MapLeaf
 
