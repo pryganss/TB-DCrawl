@@ -73,7 +73,7 @@ func new_level():
 			randi_range(starting_room.grid_position.x, starting_room.grid_position.x + starting_room.size.x - 2),
 			randi_range(starting_room.grid_position.y, starting_room.grid_position.y + starting_room.size.y - 2)))
 
-	player.ready.connect(game_manager.connect_player)
+	player.tree_entered.connect(game_manager.connect_player)
 
 	Initiative.initiative[100] = player
 	entities.add_child(player)

@@ -27,10 +27,9 @@ func connect_player():
 
 	Map.player.components.get(cpnt.WIELD).item_changed.connect($UI.update_item)
 
+	$UI.connect_player()
 	$UI.update_health()
 	$UI.update_item()
-
-	$Camera2D.player = Map.player
 
 	$"UI/New Stance UI".event_handler = event_handler
 

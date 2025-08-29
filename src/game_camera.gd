@@ -1,6 +1,5 @@
 extends Camera2D
 
-var player: Entity
-
 func _physics_process(_delta: float) -> void:
-	position = player.position
+	if Map.player.is_inside_tree():
+		position = Map.player.position
