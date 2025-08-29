@@ -1,45 +1,45 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=14 format=3 uid="uid://cslfjyxoponnu"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=14 format=3 uid="uid://bl56wabahx8md"]
 
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_i4i6i"]
 [ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="2_1bn04"]
-[ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="3_63kh4"]
+[ext_resource type="Script" uid="uid://t8f5o03rs37r" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="3_63kh4"]
 [ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="4_d5pv0"]
 [ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="5_p2eih"]
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="6_00wux"]
 [ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="6_1bn04"]
 [ext_resource type="Texture2D" uid="uid://bj0qeksp5gh1f" path="res://32rogues/monsters.png" id="7_a2r2c"]
 
-[sub_resource type="Resource" id="Resource_cu2xn"]
-script = ExtResource("2_1bn04")
-max_hp = 12
-level = 0
-armor = 3
-metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
-
-[sub_resource type="Resource" id="Resource_hwk6t"]
+[sub_resource type="Resource" id="Resource_bhbu6"]
 script = ExtResource("3_63kh4")
 delay = 200
-metadata/_custom_type_script = "uid://dyy58hynshsip"
+metadata/_custom_type_script = "uid://t8f5o03rs37r"
 
-[sub_resource type="Resource" id="Resource_phwv6"]
+[sub_resource type="Resource" id="Resource_0v07n"]
+script = ExtResource("2_1bn04")
+max_hp = 10
+level = 0
+armor = 4
+metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
+
+[sub_resource type="Resource" id="Resource_1bn04"]
 script = ExtResource("4_d5pv0")
 metadata/_custom_type_script = "uid://lv06866ab2mh"
 
-[sub_resource type="Resource" id="Resource_50wf7"]
+[sub_resource type="Resource" id="Resource_63kh4"]
 script = ExtResource("5_p2eih")
-damage = Array[String](["1d4"])
+damage = Array[String](["2d4"])
 mod = 0
 status = Array[ExtResource("6_1bn04")]([])
 delay = 100
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2tv4g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4i6i"]
 atlas = ExtResource("7_a2r2c")
 region = Rect2(32, 64, 32, 32)
 
 [resource]
 script = ExtResource("6_00wux")
-texture = SubResource("AtlasTexture_2tv4g")
+texture = SubResource("AtlasTexture_i4i6i")
 blocker = true
-components = Array[ExtResource("1_i4i6i")]([SubResource("Resource_cu2xn"), SubResource("Resource_hwk6t"), SubResource("Resource_phwv6"), SubResource("Resource_50wf7")])
+components = Array[ExtResource("1_i4i6i")]([SubResource("Resource_bhbu6"), SubResource("Resource_0v07n"), SubResource("Resource_1bn04"), SubResource("Resource_63kh4")])
 metadata/_custom_type_script = "uid://b7urauaipbtpo"

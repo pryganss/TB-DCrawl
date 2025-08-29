@@ -8,4 +8,5 @@ enum {
 	MOVEMENT,
 	WIELD,
 	ITEM,
+	STAIR,
 	}

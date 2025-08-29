@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StanceDefinition" load_steps=4 format=3 uid="uid://ds2oyc1plmbyd"]
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=4 format=3 uid="uid://buthfij2abhjp"]
 
 [ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="1_olocj"]
 [ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="2_lw877"]

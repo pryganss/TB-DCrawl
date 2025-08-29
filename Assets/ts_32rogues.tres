@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cxs4k2byg0m2y"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://7rwxy3hr8mnm"]
 
 [ext_resource type="Texture2D" uid="uid://iq4blri35wgm" path="res://32rogues/tiles.png" id="1_yu3xq"]
 [ext_resource type="Texture2D" uid="uid://1ei7j0440u4h" path="res://32rogues/animated-tiles.png" id="2_r4ndr"]

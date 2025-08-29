@@ -7,7 +7,9 @@ const TILES: Dictionary[String, Vector2i] = {
 	}
 const MAP_SIZE = Vector2i(25, 25)
 
-const EXIT_ROOM: RoomDefinition = preload("res://Assets/MapGen/Rooms/exit_room.tres")
+signal map_ready
+
+var current_floor = 0
 
 var remaining_rooms: int = 5
 
@@ -42,3 +44,34 @@ func erase_auto_tile(grid_position: Vector2i):
 func update_auto_tiles():
 	game_map.set_cells_terrain_connect(auto_tiles.keys(), 1, 0, false)
 
+
+func new_level():
+	if player: entities.remove_child(player)
+	get_tree().change_scene_to_file("res://src/game.tscn")
+
+	await map_ready
+
+	var game_manager = get_tree().current_scene as GameManager
+
+	Initiative.reset()
+	MapGen.generate_map()
+
+	var starting_room: MapLeaf = rooms.pick_random()
+	starting_room.room_placed.disconnect(MapGen.new_room)
+
+	for door in starting_room.draw_room(game_map):
+		entities.add_child(door)
+
+	if player:
+		player.grid_position = Vector2i(
+			randi_range(starting_room.grid_position.x, starting_room.grid_position.x + starting_room.size.x - 2),
+			randi_range(starting_room.grid_position.y, starting_room.grid_position.y + starting_room.size.y - 2))
+	else:
+		player = Entity.new(MapGen.player_definition, Vector2i(
+			randi_range(starting_room.grid_position.x, starting_room.grid_position.x + starting_room.size.x - 2),
+			randi_range(starting_room.grid_position.y, starting_room.grid_position.y + starting_room.size.y - 2)))
+
+	player.ready.connect(game_manager.connect_player)
+
+	Initiative.initiative[100] = player
+	entities.add_child(player)

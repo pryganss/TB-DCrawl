@@ -15,9 +15,12 @@ var walls: Dictionary[Vector2i, Array] = {}
 var placed: bool = false
 var has_door: bool = false
 
+signal room_placed(room: MapLeaf)
+
 func _init(position: Vector2i, room_size: Vector2i):
 	grid_position = position
 	size = room_size
+	room_placed.connect(MapGen.new_room)
 
 func get_leaves() -> Array[MapLeaf]:
 	if not (child_0 and child_1):
@@ -121,6 +124,8 @@ func draw_room(game_map: TileMapLayer) -> Array[Entity]:
 		Map.update_auto_tiles()
 
 	placed = true
+
+	room_placed.emit(self)
 
 	return get_random_doors()
 

@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="RoomDefinition" load_steps=8 format=3 uid="uid://c32kjt862qwgq"]
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=8 format=3 uid="uid://bblyhxwxq6wn8"]
 
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_0emr7"]
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="2_2sy6f"]
 [ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_7bp6j"]
-[ext_resource type="Script" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="3_1q7i2"]
-[ext_resource type="Resource" uid="uid://c6c6v8arpsdll" path="res://Assets/Items/sword_definition.tres" id="3_j3lcj"]
+[ext_resource type="Script" uid="uid://cvvmd65n8jknf" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="3_1q7i2"]
+[ext_resource type="Resource" uid="uid://k3qc7cjgnukg" path="res://Assets/Items/sword_definition.tres" id="3_j3lcj"]
 
 [sub_resource type="Resource" id="Resource_ec6hl"]
 script = ExtResource("3_1q7i2")

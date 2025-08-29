@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemDefinition" load_steps=8 format=3 uid="uid://c6c6v8arpsdll"]
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=8 format=3 uid="uid://k3qc7cjgnukg"]
 
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_r0gqs"]
 [ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="2_03qck"]

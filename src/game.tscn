@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bspx880yfoc6m"]
+[gd_scene load_steps=8 format=3 uid="uid://d1n30riw3fmwr"]
 
 [ext_resource type="Script" uid="uid://c1ge13dpv2th8" path="res://src/game_manager.gd" id="1_80nbo"]
-[ext_resource type="TileSet" uid="uid://cxs4k2byg0m2y" path="res://Assets/ts_32rogues.tres" id="2_e2o6t"]
+[ext_resource type="TileSet" uid="uid://7rwxy3hr8mnm" path="res://Assets/ts_32rogues.tres" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://wpda871kgvnv" path="res://src/game_camera.gd" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://cxu2x65ria13m" path="res://src/event_handler.gd" id="3_feb5d"]
-[ext_resource type="PackedScene" uid="uid://cjj65xjfefnqx" path="res://src/UI/ui.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://brgfjyp1broom" path="res://src/UI/ui.tscn" id="4_fc0e3"]
 
 [sub_resource type="Gradient" id="Gradient_7jktm"]
 colors = PackedColorArray(0.215207, 0.248285, 0.348273, 1, 0.494053, 0.536173, 0.641105, 1)
