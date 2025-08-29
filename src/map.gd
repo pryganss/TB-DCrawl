@@ -2,6 +2,8 @@ extends Node
 
 signal new_game_tick
 
+const player_definition = preload("res://Assets/Entities/player_definition.tres")
+
 const TILES: Dictionary[String, Vector2i] = {
 	"FLOOR": Vector2i(0, 11),
 	}
@@ -67,7 +69,7 @@ func new_level():
 			randi_range(starting_room.grid_position.x, starting_room.grid_position.x + starting_room.size.x - 2),
 			randi_range(starting_room.grid_position.y, starting_room.grid_position.y + starting_room.size.y - 2))
 	else:
-		player = Entity.new(MapGen.player_definition, Vector2i(
+		player = Entity.new(player_definition, Vector2i(
 			randi_range(starting_room.grid_position.x, starting_room.grid_position.x + starting_room.size.x - 2),
 			randi_range(starting_room.grid_position.y, starting_room.grid_position.y + starting_room.size.y - 2)))
 

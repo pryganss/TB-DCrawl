@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_me5af"]
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_vw3sr"]
 [ext_resource type="Texture2D" uid="uid://d0kvthj4gmmtc" path="res://32rogues/rogues.png" id="2_cqhrn"]
-[ext_resource type="Script" uid="uid://t8f5o03rs37r" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="2_iwrak"]
+[ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="2_iwrak"]
 [ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="3_y2o4j"]
 [ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="4_iv1rs"]
 [ext_resource type="Resource" uid="uid://k3qc7cjgnukg" path="res://Assets/Items/sword_definition.tres" id="5_2cuht"]

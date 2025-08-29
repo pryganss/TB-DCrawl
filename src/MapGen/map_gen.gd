@@ -5,10 +5,7 @@ const MIN_ROOM_SIZE = Vector2i(6, 5)
 const MAX_ROOM_SIZE = Vector2i(8, 7)
 
 const EXIT_ROOM: RoomDefinition = preload("res://Assets/MapGen/Rooms/exit_room.tres")
-
-const player_definition = preload("res://Assets/Entities/player_definition.tres")
-
-const map_definitions = [preload("res://Assets/MapGen/map_definition.tres")]
+const map_definitions: Array[MapDefinition] = [preload("res://Assets/MapGen/map_definition.tres")]
 
 static func setup_pathfinding():
 	Map.astar = AStarGrid2D.new()
@@ -26,13 +23,13 @@ static func generate_map() -> void:
 
 	setup_pathfinding()
 
-	Map.remaining_rooms = 5
-
 	var root_room = MapLeaf.new(Vector2i(), Map.MAP_SIZE)
-	root_room.split(Map.remaining_rooms)
+	root_room.split(5)
 	Map.rooms = root_room.get_leaves()
 	Map.wall_tiles = MapLeaf.get_wall_tiles(Map.rooms)
 	MapLeaf.set_wall_tiles(Map.wall_tiles)
+
+	Map.remaining_rooms = map_definitions[Map.current_floor].number_of_rooms
 
 static func new_room(room: MapLeaf):
 	var entities: Array[Entity] = []
