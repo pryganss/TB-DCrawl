@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwvnismq7tkhu"]
+
+[ext_resource type="PackedScene" uid="uid://cwn6chugt0ph5" path="res://src/UI/main_menu.tscn" id="1_37fjv"]
+
+[node name="Main Menu" instance=ExtResource("1_37fjv")]
+
+[node name="Title" parent="." index="1"]
+text = "YOU WIN"
+
+[node name="Subtitle" parent="." index="2"]
+text = "You have escaped with yet another amulet of yendor"
+
+[node name="Start Button" parent="Menu Buttons" index="0"]
+custom_minimum_size = Vector2(245, 83)
+theme_override_font_sizes/font_size = 35
+text = "Play Again"
+
+[node name="Quit Button" parent="Menu Buttons" index="1"]
+custom_minimum_size = Vector2(245, 83)
+theme_override_font_sizes/font_size = 35

@@ -7,7 +7,7 @@ const player_definition = preload("res://Assets/Entities/player_definition.tres"
 const TILES: Dictionary[String, Vector2i] = {
 	"FLOOR": Vector2i(0, 11),
 	}
-const MAP_SIZE = Vector2i(25, 25)
+const MAP_SIZE = Vector2i(50, 50)
 
 signal map_ready
 
@@ -82,3 +82,7 @@ func new_level():
 
 	Initiative.initiative[100] = player
 	entities.add_child(player)
+
+func win():
+	Map.current_floor = 0
+	get_tree().change_scene_to_file("res://src/UI/win.tscn")
