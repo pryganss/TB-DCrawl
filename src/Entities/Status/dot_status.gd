@@ -1,12 +1,12 @@
-class_name RegenStatus
+class_name DamageOverTimeStatus
 extends GameTickStatus
 
-var counter: int = 50
+var counter: int = 100
 
 func apply(_args = {}, _signal_name = "unnamed_signal"):
-	if counter >= 50:
+	if counter >= 100:
 		var fighter_component: FighterComponent = entity.components.get(cpnt.FIGHTER) as FighterComponent
-		fighter_component.hp += 1
-		counter -= 50
+		fighter_component.hp -= 1
+		counter -= 100
 
 	counter += 1
