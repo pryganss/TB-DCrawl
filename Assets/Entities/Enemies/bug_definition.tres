@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=15 format=3 uid="uid://0l2bp8ij4a0l"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_ipneb"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_1abjw"]
+[ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="2_ad1r6"]
+[ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="3_1pisv"]
+[ext_resource type="Texture2D" uid="uid://bj0qeksp5gh1f" path="res://32rogues/monsters.png" id="3_27hw7"]
+[ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="4_ong23"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="5_rfs2c"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="6_ypl4m"]
+
+[sub_resource type="Resource" id="Resource_en7yk"]
+script = ExtResource("2_ad1r6")
+metadata/_custom_type_script = "uid://lv06866ab2mh"
+
+[sub_resource type="Resource" id="Resource_tsecn"]
+script = ExtResource("3_1pisv")
+max_hp = 5
+level = 2
+armor = 0
+metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
+
+[sub_resource type="Resource" id="Resource_o1010"]
+script = ExtResource("4_ong23")
+delay = 80
+metadata/_custom_type_script = "uid://t8f5o03rs37r"
+
+[sub_resource type="Resource" id="Resource_ad1r6"]
+script = ExtResource("6_ypl4m")
+duration = 500
+status = 3
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
+[sub_resource type="Resource" id="Resource_w0u5p"]
+script = ExtResource("5_rfs2c")
+damage = Array[String](["1d1"])
+mod = 1
+status = Array[ExtResource("6_ypl4m")]([SubResource("Resource_ad1r6")])
+delay = 80
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ngic"]
+atlas = ExtResource("3_27hw7")
+region = Rect2(0, 192, 32, 32)
+
+[resource]
+script = ExtResource("2_1abjw")
+texture = SubResource("AtlasTexture_4ngic")
+blocker = true
+components = Array[ExtResource("1_ipneb")]([SubResource("Resource_en7yk"), SubResource("Resource_tsecn"), SubResource("Resource_o1010"), SubResource("Resource_w0u5p")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"

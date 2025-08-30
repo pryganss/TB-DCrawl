@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://t8f5o03rs37r"
 script = ExtResource("2_1bn04")
 max_hp = 10
 level = 0
-armor = 4
+armor = 5
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
 
 [sub_resource type="Resource" id="Resource_1bn04"]
@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://lv06866ab2mh"
 
 [sub_resource type="Resource" id="Resource_63kh4"]
 script = ExtResource("5_p2eih")
-damage = Array[String](["2d4"])
+damage = Array[String](["3d2"])
 mod = 0
 status = Array[ExtResource("6_1bn04")]([])
 delay = 100

@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=17 format=3 uid="uid://dxnissqx3tx4r"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_8gu7m"]
+[ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="2_0myqd"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_dgfiu"]
+[ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="3_3d7ys"]
+[ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="4_8a85f"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="5_4xfho"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="6_lcnro"]
+[ext_resource type="Resource" uid="uid://b4gn4rcrr280e" path="res://Assets/Items/dagger_definition.tres" id="7_rby0w"]
+[ext_resource type="Script" uid="uid://bho42oe7xr0ir" path="res://src/Entities/Components/Definitions/wield_component_definition.gd" id="8_7rcjk"]
+[ext_resource type="Texture2D" uid="uid://bj0qeksp5gh1f" path="res://32rogues/monsters.png" id="10_0muv2"]
+
+[sub_resource type="Resource" id="Resource_dcwud"]
+script = ExtResource("2_0myqd")
+metadata/_custom_type_script = "uid://lv06866ab2mh"
+
+[sub_resource type="Resource" id="Resource_x6bvn"]
+script = ExtResource("3_3d7ys")
+max_hp = 10
+level = 1
+armor = 0
+metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
+
+[sub_resource type="Resource" id="Resource_6ibnq"]
+script = ExtResource("4_8a85f")
+delay = 100
+metadata/_custom_type_script = "uid://t8f5o03rs37r"
+
+[sub_resource type="Resource" id="Resource_10rfc"]
+script = ExtResource("5_4xfho")
+damage = Array[String](["1d2"])
+mod = 0
+status = Array[ExtResource("6_lcnro")]([])
+delay = 100
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
+
+[sub_resource type="Resource" id="Resource_okx1s"]
+script = ExtResource("8_7rcjk")
+item_definition = ExtResource("7_rby0w")
+delay = 100
+metadata/_custom_type_script = "uid://bho42oe7xr0ir"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eyx7"]
+atlas = ExtResource("10_0muv2")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_dgfiu")
+texture = SubResource("AtlasTexture_6eyx7")
+blocker = true
+components = Array[ExtResource("1_8gu7m")]([SubResource("Resource_dcwud"), SubResource("Resource_x6bvn"), SubResource("Resource_6ibnq"), SubResource("Resource_10rfc"), SubResource("Resource_okx1s")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
