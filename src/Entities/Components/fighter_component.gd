@@ -12,7 +12,7 @@ signal turn_started
 
 signal damage_started
 
-signal died(entity: Entity)
+signal died()
 signal damage_ended()
 signal damaged
 
@@ -43,6 +43,11 @@ func _init(component_definition: FighterComponentDefinition):
 	BASE_ARMOR = component_definition.armor
 	armor = BASE_ARMOR
 
+	ready.connect(func():
+		if component_definition.starting_status:
+			for st in component_definition.starting_status:
+				stat.STATUS[st.status].call(entity, st.duration))
+
 func damage(value):
 	damage_started.emit({"amount": value, "entity": entity}, "damage_started")
 	var reduced_damage = ceili(value / (1.0 + (armor / 10.0)))
@@ -63,4 +68,4 @@ func die():
 	if wield_component:
 		wield_component.drop_item()
 
-	died.emit(entity)
+	died.emit({"entity": entity}, "died")

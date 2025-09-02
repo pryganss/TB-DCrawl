@@ -14,7 +14,8 @@ func get_current_turn() -> Entity:
 	entity.components.get(cpnt.FIGHTER).turn_started.emit({"entity": entity}, "turn_started")
 	return entity
 
-func pop_actor(entity: Entity):
+func pop_actor(args: Dictionary, _signal_name = "unnamed_signal"):
+	var entity = args["entity"] as Entity
 	if initiative.find_key(entity): initiative.erase(initiative.find_key(entity))
 	entity.queue_free()
 
@@ -68,7 +69,7 @@ func pass_turn(entity):
 	keys.sort()
 	if keys.size() > 1:
 		var next_turn = keys[1]
-		delay_turn(entity, next_turn - t)
+		delay_turn(entity, max(next_turn - t, 100))
 	else:
 		delay_turn(entity, 100)
 

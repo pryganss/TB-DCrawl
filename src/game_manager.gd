@@ -36,7 +36,7 @@ func connect_player():
 	Map.new_room.connect(_decrement_stance)
 	_new_stance()
 
-func reset(_entity: Entity):
+func reset(_args: Dictionary, _signal_name = "unnamed_signal"):
 	Map.current_floor = 0
 	get_tree().change_scene_to_file("res://src/UI/main_menu.tscn")
 

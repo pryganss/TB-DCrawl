@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=15 format=3 uid="uid://crhmtggcddojo"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=16 format=3 uid="uid://crhmtggcddojo"]
 
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_me5af"]
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_vw3sr"]
@@ -15,11 +15,18 @@ script = ExtResource("2_iwrak")
 delay = 100
 metadata/_custom_type_script = "uid://dyy58hynshsip"
 
+[sub_resource type="Resource" id="Resource_3rpvs"]
+script = ExtResource("5_3rpvs")
+duration = -1
+status = 4
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
 [sub_resource type="Resource" id="Resource_iv1rs"]
 script = ExtResource("3_y2o4j")
 max_hp = 20
 level = 1
 armor = 0
+starting_status = Array[ExtResource("5_3rpvs")]([SubResource("Resource_3rpvs")])
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
 
 [sub_resource type="Resource" id="Resource_gkr2g"]
