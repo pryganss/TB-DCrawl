@@ -59,3 +59,5 @@ static func new_room(room: MapLeaf):
 
 	for entity in entities:
 		Initiative.add_entity(entity)
+
+	Map.new_room.emit({"room": room}, "new_room")
