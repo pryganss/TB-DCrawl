@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=4 format=3 uid="uid://dpwnettilflns"]
+
+[ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="1_l0oqk"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="2_03cxt"]
+
+[sub_resource type="Resource" id="Resource_l0oqk"]
+script = ExtResource("2_03cxt")
+duration = -1
+status = 4
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
+[resource]
+script = ExtResource("1_l0oqk")
+status = Array[ExtResource("2_03cxt")]([SubResource("Resource_l0oqk")])
+name = "Bloodthief Stance"
+description = "Gain life based on damage dealt."
+metadata/_custom_type_script = "uid://cojmli4pgkhte"
