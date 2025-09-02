@@ -23,7 +23,8 @@ var entity: Entity
 func _init(affected_entity: Entity, start_duration = -1):
 	var fighter_component = affected_entity.components.get(cpnt.FIGHTER) as FighterComponent
 	for status in fighter_component.status as Array[Status]:
-		if typeof(status) == typeof(self):
+		if status.get_script().get_global_name() == self.get_script().get_global_name():
+			entity = affected_entity
 			extend_status(start_duration)
 			return
 
