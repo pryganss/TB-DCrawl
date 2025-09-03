@@ -20,7 +20,7 @@ func open_door():
 	Map.astar.set_point_solid(entity.grid_position, false)
 
 	# Heal Player
-	Map.player.components.get(cpnt.FIGHTER).hp += 2
+	Map.player.components.get(cpnt.FIGHTER).hp += 5
 
 	entity.queue_free()
 	pass
