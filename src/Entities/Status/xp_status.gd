@@ -1,11 +1,11 @@
 class_name XPStatus
 extends OnKillStatus
 
-var xp_to_next_level: int = 100:
+var xp_to_next_level: int = 60:
 	set(value):
 		while value < 0:
 			level_up()
-			value += fighter_component.level * 100
+			value += fighter_component.level * 80
 		xp_to_next_level = value
 
 var fighter_component: FighterComponent
