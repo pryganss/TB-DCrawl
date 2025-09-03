@@ -28,7 +28,7 @@ var hp: int:
 
 var BASE_ARMOR: int:
 	set(value):
-		armor = max(value, 0)
+		BASE_ARMOR = max(value, 0)
 
 var armor: int:
 	set(value):
