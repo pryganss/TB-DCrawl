@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapDefinition" load_steps=13 format=3 uid="uid://d4uqf65dp3nb"]
+[gd_resource type="Resource" script_class="MapDefinition" load_steps=16 format=3 uid="uid://d4uqf65dp3nb"]
 
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_6go7k"]
 [ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_66umw"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bs2jaln6ch3ba" path="res://32rogues/items.png" id="3_5yspm"]
 [ext_resource type="Script" uid="uid://chfpqmtxwp0ad" path="res://src/Entities/Components/Definitions/yendor_component_definition.gd" id="3_6go7k"]
 [ext_resource type="Script" uid="uid://bhm3bql3b201q" path="res://src/MapGen/map_definition.gd" id="3_ty1gh"]
-[ext_resource type="Resource" uid="uid://bl56wabahx8md" path="res://Assets/Entities/Enemies/slime_definition.tres" id="6_rwel0"]
+[ext_resource type="Resource" uid="uid://dy0t0qsv6watf" path="res://Assets/MapGen/Rooms/Floor 2/big_hobgoblin_room.tres" id="6_rwel0"]
+[ext_resource type="Resource" uid="uid://d2jqn0lw0wtho" path="res://Assets/MapGen/Rooms/Floor 2/big_snake_room.tres" id="7_iwluf"]
+[ext_resource type="Resource" uid="uid://blbjnb7xhm5vm" path="res://Assets/MapGen/Rooms/Floor 2/bugbear_room.tres" id="8_egq8j"]
+[ext_resource type="Resource" uid="uid://bq1h8ugk4aqvi" path="res://Assets/MapGen/Rooms/Floor 1/poison_room.tres" id="9_hsblp"]
+[ext_resource type="Resource" uid="uid://mhrvfhx4j7np" path="res://Assets/MapGen/Rooms/Floor 1/hobgoblin_room.tres" id="10_e7802"]
 
 [sub_resource type="Resource" id="Resource_dna5y"]
 script = ExtResource("3_6go7k")
@@ -28,14 +32,9 @@ script = ExtResource("2_66umw")
 features = Array[ExtResource("1_6go7k")]([SubResource("Resource_tw2vr")])
 metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
 
-[sub_resource type="Resource" id="Resource_e7802"]
-script = ExtResource("2_66umw")
-features = Array[ExtResource("1_6go7k")]([ExtResource("6_rwel0")])
-metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
-
 [resource]
 script = ExtResource("3_ty1gh")
-room_types = Array[ExtResource("2_66umw")]([SubResource("Resource_e7802")])
+room_types = Array[ExtResource("2_66umw")]([ExtResource("6_rwel0"), ExtResource("7_iwluf"), ExtResource("8_egq8j"), ExtResource("9_hsblp"), ExtResource("9_hsblp"), ExtResource("10_e7802"), ExtResource("10_e7802")])
 exit_room = SubResource("Resource_hsblp")
-number_of_rooms = 3
+number_of_rooms = 7
 metadata/_custom_type_script = "uid://bhm3bql3b201q"
