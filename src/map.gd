@@ -16,8 +16,7 @@ var current_floor = 0
 signal new_room(args: Dictionary, signal_name: String)
 
 var remaining_rooms: int = 5
-
-var last_room: MapLeaf
+var rooms_placed = 0
 
 var game_map: TileMapLayer
 var entities: Node
@@ -29,6 +28,9 @@ var wall_tiles: Dictionary[Vector2i, Array]
 var auto_tiles: Dictionary[Vector2i, int]
 
 var astar: AStarGrid2D
+
+func _ready():
+	new_room.connect(func(_x, _y): rooms_placed += 1)
 
 func get_tile(grid_position: Vector2i) -> TileData:
 	return game_map.get_cell_tile_data(grid_position)

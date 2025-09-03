@@ -22,8 +22,6 @@ func _init():
 static func generate_map() -> void:
 	Map.auto_tiles = {}
 
-	Map.last_room = null
-
 	setup_pathfinding()
 
 	var root_room = MapLeaf.new(Vector2i(), Map.MAP_SIZE)
@@ -33,12 +31,13 @@ static func generate_map() -> void:
 	MapLeaf.set_wall_tiles(Map.wall_tiles)
 
 	Map.remaining_rooms = map_definitions[Map.current_floor].number_of_rooms
+	Map.rooms_placed = 0
 
 static func new_room(room: MapLeaf):
 	var entities: Array[Entity] = []
 
 	var room_entities: Array[EntityDefinition]
-	if room == Map.last_room:
+	if Map.rooms_placed == map_definitions[Map.current_floor].number_of_rooms - 1:
 		room_entities = map_definitions[Map.current_floor].exit_room.features.duplicate()
 	else:
 		room_entities = map_definitions[Map.current_floor].room_types.pick_random().features.duplicate()

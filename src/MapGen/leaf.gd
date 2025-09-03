@@ -153,7 +153,5 @@ func get_random_doors():
 
 		doors += [Entity.new(door_definition, tile)]
 		Map.remaining_rooms -= 1
-		if Map.remaining_rooms == 0:
-			Map.last_room = current_room
 
 	return doors
