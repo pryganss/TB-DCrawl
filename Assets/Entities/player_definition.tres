@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://bgnge8s0rq04j"
 script = ExtResource("3_y2o4j")
 max_hp = 20
 level = 1
-armor = 0
+armor = 3
 starting_status = Array[ExtResource("5_3rpvs")]([SubResource("Resource_3rpvs")])
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
 
