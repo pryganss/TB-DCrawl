@@ -19,5 +19,8 @@ func open_door():
 	Map.game_map.set_cell(entity.grid_position, 0, Map.TILES["FLOOR"])
 	Map.astar.set_point_solid(entity.grid_position, false)
 
+	# Heal Player
+	Map.player.components.get(cpnt.FIGHTER).hp += 2
+
 	entity.queue_free()
 	pass
