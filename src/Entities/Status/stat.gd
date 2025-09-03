@@ -8,6 +8,7 @@ enum STATUS_ENUM {
 	DOT_STATUS,
 	VAMPIRE_STATUS,
 	XP_STATUS,
+	DAMAGE_MULTIPLIER_STATUS,
 	}
 
 var STATUS: Dictionary[STATUS_ENUM, Callable] = {
@@ -17,4 +18,5 @@ var STATUS: Dictionary[STATUS_ENUM, Callable] = {
 	STATUS_ENUM.DOT_STATUS : DamageOverTimeStatus.new,
 	STATUS_ENUM.VAMPIRE_STATUS : VampireStatus.new,
 	STATUS_ENUM.XP_STATUS : XPStatus.new,
+	STATUS_ENUM.DAMAGE_MULTIPLIER_STATUS : DamageMultiplierStatus.new,
 	}
