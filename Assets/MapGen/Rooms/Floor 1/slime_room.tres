@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=4 format=3 uid="uid://dxhodteqs6jl7"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_lhbgw"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_favrs"]
+[ext_resource type="Resource" uid="uid://bl56wabahx8md" path="res://Assets/Entities/Enemies/slime_definition.tres" id="2_klkj8"]
+
+[resource]
+script = ExtResource("2_favrs")
+features = Array[ExtResource("1_lhbgw")]([ExtResource("2_klkj8"), ExtResource("2_klkj8"), ExtResource("2_klkj8")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

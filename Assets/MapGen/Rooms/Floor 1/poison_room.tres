@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=9 format=3 uid="uid://bq1h8ugk4aqvi"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_3wsk1"]
+[ext_resource type="Resource" uid="uid://0l2bp8ij4a0l" path="res://Assets/Entities/Enemies/bug_definition.tres" id="2_em5ls"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_srue1"]
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="3_yme6d"]
+[ext_resource type="Resource" uid="uid://c1bjbnhwk1jsi" path="res://Assets/Items/axe_definition.tres" id="4_sqj42"]
+[ext_resource type="Script" uid="uid://cvvmd65n8jknf" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="5_qjrap"]
+
+[sub_resource type="Resource" id="Resource_d5u1q"]
+script = ExtResource("5_qjrap")
+item_definition = ExtResource("4_sqj42")
+metadata/_custom_type_script = "uid://cvvmd65n8jknf"
+
+[sub_resource type="Resource" id="Resource_lqoak"]
+script = ExtResource("1_3wsk1")
+blocker = false
+components = Array[ExtResource("3_yme6d")]([SubResource("Resource_d5u1q")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
+
+[resource]
+script = ExtResource("2_srue1")
+features = Array[ExtResource("1_3wsk1")]([ExtResource("2_em5ls"), SubResource("Resource_lqoak")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

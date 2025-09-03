@@ -1,19 +1,16 @@
-[gd_resource type="Resource" script_class="MapDefinition" load_steps=7 format=3 uid="uid://22fwbp6biutp"]
+[gd_resource type="Resource" script_class="MapDefinition" load_steps=8 format=3 uid="uid://22fwbp6biutp"]
 
-[ext_resource type="Resource" uid="uid://bblyhxwxq6wn8" path="res://Assets/MapGen/Rooms/exit_room.tres" id="1_ag1l8"]
+[ext_resource type="Resource" uid="uid://dqg744snfce7q" path="res://Assets/MapGen/Rooms/Floor 1/floor_1_exit.tres" id="1_fpoim"]
 [ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_ahtfd"]
-[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="3_fpoim"]
-[ext_resource type="Resource" uid="uid://bl56wabahx8md" path="res://Assets/Entities/Enemies/slime_definition.tres" id="4_puw6v"]
+[ext_resource type="Resource" uid="uid://mhrvfhx4j7np" path="res://Assets/MapGen/Rooms/Floor 1/hobgoblin_room.tres" id="3_puw6v"]
+[ext_resource type="Resource" uid="uid://bq1h8ugk4aqvi" path="res://Assets/MapGen/Rooms/Floor 1/poison_room.tres" id="4_dx3m0"]
 [ext_resource type="Script" uid="uid://bhm3bql3b201q" path="res://src/MapGen/map_definition.gd" id="5_dx3m0"]
-
-[sub_resource type="Resource" id="Resource_btaov"]
-script = ExtResource("2_ahtfd")
-features = Array[ExtResource("3_fpoim")]([ExtResource("4_puw6v")])
-metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
+[ext_resource type="Resource" uid="uid://dxhodteqs6jl7" path="res://Assets/MapGen/Rooms/Floor 1/slime_room.tres" id="5_m10h7"]
+[ext_resource type="Resource" uid="uid://d1xfx64tmfx4i" path="res://Assets/MapGen/Rooms/Floor 1/small_goblin_room.tres" id="6_l1ym0"]
 
 [resource]
 script = ExtResource("5_dx3m0")
-room_types = Array[ExtResource("2_ahtfd")]([SubResource("Resource_btaov")])
-exit_room = ExtResource("1_ag1l8")
-number_of_rooms = 10
+room_types = Array[ExtResource("2_ahtfd")]([ExtResource("3_puw6v"), ExtResource("4_dx3m0"), ExtResource("5_m10h7"), ExtResource("6_l1ym0"), ExtResource("5_m10h7"), ExtResource("5_m10h7"), ExtResource("6_l1ym0")])
+exit_room = ExtResource("1_fpoim")
+number_of_rooms = 8
 metadata/_custom_type_script = "uid://bhm3bql3b201q"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=6 format=3 uid="uid://dqg744snfce7q"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_3jkjh"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_ch3ka"]
+[ext_resource type="Resource" uid="uid://bsg5dp604ynt2" path="res://Assets/Entities/stair_definition.tres" id="2_ikwq4"]
+[ext_resource type="Resource" uid="uid://dxnissqx3tx4r" path="res://Assets/Entities/Enemies/goblin_definition.tres" id="3_otvvy"]
+[ext_resource type="Resource" uid="uid://b7vm5fd1cjy0q" path="res://Assets/Entities/Enemies/hobgoblin_definition.tres" id="4_chkme"]
+
+[resource]
+script = ExtResource("2_ch3ka")
+features = Array[ExtResource("1_3jkjh")]([ExtResource("2_ikwq4"), ExtResource("3_otvvy"), ExtResource("4_chkme"), ExtResource("3_otvvy")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
