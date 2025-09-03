@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ItemDefinition" load_steps=7 format=3 uid="uid://c1bjbnhwk1jsi"]
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=8 format=3 uid="uid://c1bjbnhwk1jsi"]
 
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_26dob"]
 [ext_resource type="Script" uid="uid://dc7p4trvm8ub" path="res://src/Items/item_definition.gd" id="2_byhk7"]
 [ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="2_xml6n"]
 [ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="3_gjg3d"]
-[ext_resource type="Texture2D" path="res://Assets/default_item.tres" id="3_xml6n"]
+[ext_resource type="Texture2D" uid="uid://bs2jaln6ch3ba" path="res://32rogues/items.png" id="5_xml6n"]
 
 [sub_resource type="Resource" id="Resource_6khyl"]
 script = ExtResource("2_xml6n")
@@ -14,8 +14,12 @@ status = Array[ExtResource("3_gjg3d")]([])
 delay = 150
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjg3d"]
+atlas = ExtResource("5_xml6n")
+region = Rect2(0, 96, 32, 32)
+
 [resource]
 script = ExtResource("2_byhk7")
 components = Array[ExtResource("1_26dob")]([SubResource("Resource_6khyl")])
-texture = ExtResource("3_xml6n")
+texture = SubResource("AtlasTexture_gjg3d")
 metadata/_custom_type_script = "uid://dc7p4trvm8ub"
