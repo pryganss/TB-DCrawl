@@ -31,7 +31,7 @@ func hit(target: FighterComponent) -> int:
 
 	if Attack.to_hit(fighter_component.level - target.level):
 		damage_dealt = Attack.damage(damage, mod)
-		target.damage(damage_dealt)
+		target.damage(damage_dealt, Color.RED)
 		if status:
 			for st in status:
 				stat.STATUS[st.status].call(target.entity, st.duration)

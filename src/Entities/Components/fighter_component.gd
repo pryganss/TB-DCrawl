@@ -48,12 +48,14 @@ func _init(component_definition: FighterComponentDefinition):
 			for st in component_definition.starting_status:
 				stat.STATUS[st.status].call(entity, st.duration))
 
-func damage(value):
+func damage(value: int, color: Color, ignore_armor: = false):
 	damage_started.emit({"amount": value, "entity": entity}, "damage_started")
-	var reduced_damage = ceili(value / (1.0 + (armor / 10.0)))
-	entity.flash(Color.RED)
-	hp -= reduced_damage
-	damage_ended.emit({"amount": reduced_damage, "entity": entity}, "damage_ended")
+	var damage_taken := value
+	if not ignore_armor:
+		damage_taken = ceili(value / (1.0 + (armor / 10.0)))
+	hp -= damage_taken
+	entity.flash(color)
+	damage_ended.emit({"amount": damage_taken, "entity": entity}, "damage_ended")
 	armor = BASE_ARMOR
 
 func refresh_status():
