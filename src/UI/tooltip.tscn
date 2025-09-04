@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://emh6nwo1ydik"]
+
+[ext_resource type="Script" uid="uid://nocpug3c14e" path="res://src/UI/tooltip.gd" id="1_klku5"]
+
+[node name="Tooltip" type="VBoxContainer"]
+offset_right = 271.0
+offset_bottom = 116.0
+mouse_filter = 2
+script = ExtResource("1_klku5")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Content" type="Label" parent="."]
+custom_minimum_size = Vector2(271, 10)
+layout_mode = 2
+text = "Test Content"
+horizontal_alignment = 1
+autowrap_mode = 3

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://brgfjyp1broom"]
+[gd_scene load_steps=10 format=3 uid="uid://brgfjyp1broom"]
 
 [ext_resource type="Script" uid="uid://im7j5nw8n0e0" path="res://src/UI/ui.gd" id="1_731sn"]
 [ext_resource type="PackedScene" uid="uid://ww13ymu2l0jx" path="res://src/UI/new_stance_ui.tscn" id="2_ro1u1"]
+[ext_resource type="Script" uid="uid://bd5g1bijdmvmb" path="res://src/UI/stance_indicator.gd" id="3_jtxs2"]
+[ext_resource type="Script" uid="uid://bc8v1dqyn8wki" path="res://src/UI/xp_indicator.gd" id="4_70r1m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_515sp"]
 bg_color = Color(0.790625, 0, 0.13581, 1)
@@ -11,6 +13,17 @@ bg_color = Color(0.319036, 0.67483, 0.451924, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_731sn"]
 bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkwrj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70r1m"]
+bg_color = Color(0.365691, 0.633492, 0.804088, 1)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_731sn")
@@ -61,3 +74,72 @@ stretch_mode = 5
 
 [node name="New Stance UI" parent="." instance=ExtResource("2_ro1u1")]
 visible = false
+
+[node name="Stance Indicator" type="Panel" parent="."]
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 63.0
+offset_bottom = 62.0
+script = ExtResource("3_jtxs2")
+
+[node name="Stance Icon" type="TextureRect" parent="Stance Indicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Xp Indicator" type="Node" parent="."]
+script = ExtResource("4_70r1m")
+
+[node name="Current Level" type="Label" parent="Xp Indicator"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -140.0
+offset_right = -25.0
+offset_bottom = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 56
+text = "1"
+horizontal_alignment = 2
+
+[node name="LEVEL Text" type="Label" parent="Xp Indicator"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -108.0
+offset_right = -58.0
+offset_bottom = -89.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "LEVEL:"
+
+[node name="XP Bar" type="ProgressBar" parent="Xp Indicator"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -117.0
+offset_right = -59.0
+offset_bottom = -111.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_kkwrj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_70r1m")
+show_percentage = false

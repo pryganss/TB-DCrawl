@@ -3,6 +3,9 @@ extends CanvasLayer
 var fighter_component: FighterComponent
 var wield_component: WieldComponent
 
+func _ready():
+	$"New Stance UI".stance_changed.connect($"Stance Indicator".update_stance)
+
 func connect_player():
 	fighter_component = Map.player.components.get(cpnt.FIGHTER) as FighterComponent
 	wield_component = Map.player.components.get(cpnt.WIELD) as WieldComponent

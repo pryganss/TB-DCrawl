@@ -3,6 +3,8 @@ extends Button
 
 var offered_stance: StanceDefinition
 
+signal stance_changed(stance_definition: StanceDefinition)
+
 func change_offered_stance(stance_definition: StanceDefinition):
 	offered_stance = stance_definition
 
@@ -15,3 +17,4 @@ func _on_pressed() -> void:
 		fighter_component.stance.change_stance(offered_stance)
 	else:
 		fighter_component.stance = Stance.new(offered_stance, Map.player)
+	stance_changed.emit(offered_stance)

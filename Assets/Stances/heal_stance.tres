@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="StanceDefinition" load_steps=4 format=3 uid="uid://buthfij2abhjp"]
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=5 format=3 uid="uid://buthfij2abhjp"]
 
+[ext_resource type="Texture2D" uid="uid://bestdxf68qh34" path="res://Assets/Icons/healing.svg" id="1_lw877"]
 [ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="1_olocj"]
 [ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="2_lw877"]
 
@@ -13,5 +14,6 @@ metadata/_custom_type_script = "uid://bgnge8s0rq04j"
 script = ExtResource("1_olocj")
 status = Array[ExtResource("2_lw877")]([SubResource("Resource_olocj")])
 name = "Stance of the Sage"
+icon = ExtResource("1_lw877")
 description = "Gain regen for 20 turns."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"

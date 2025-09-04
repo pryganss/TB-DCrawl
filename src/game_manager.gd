@@ -33,6 +33,18 @@ func connect_player():
 
 	$"UI/New Stance UI".event_handler = event_handler
 
+	var connect_xp = func():
+		for st in plr_fighter_component.status:
+			if st is XPStatus:
+				$"UI/Xp Indicator".xp_status = st
+				st.xp_updated.connect($"UI/Xp Indicator"._update_xp)
+				break
+
+	if Map.player.is_node_ready():
+		connect_xp.call()
+	else:
+		Map.player.ready.connect(connect_xp.call)
+
 	Map.new_room.connect(_decrement_stance)
 	_new_stance()
 

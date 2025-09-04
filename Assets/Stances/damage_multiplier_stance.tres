@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="StanceDefinition" load_steps=4 format=3 uid="uid://beerj1ktouhdu"]
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=5 format=3 uid="uid://beerj1ktouhdu"]
 
+[ext_resource type="Texture2D" uid="uid://c3q1kaqtqsw8t" path="res://Assets/Icons/blade-drag.svg" id="1_khr5w"]
 [ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="1_qpbon"]
 [ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="2_khr5w"]
 
@@ -13,5 +14,6 @@ metadata/_custom_type_script = "uid://bgnge8s0rq04j"
 script = ExtResource("1_qpbon")
 status = Array[ExtResource("2_khr5w")]([SubResource("Resource_qpbon")])
 name = "Great Weapon Stance"
+icon = ExtResource("1_khr5w")
 description = "Gain a damage multiplier that increases for slower weapons."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"

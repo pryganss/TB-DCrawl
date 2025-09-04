@@ -5,10 +5,14 @@ extends Panel
 
 var event_handler: EventHandler
 
+signal stance_changed(stance_definition: StanceDefinition)
+
 func _ready():
 	var hide_button = func():
 		visible = false
 		event_handler.disabled = false
+	button_1.stance_changed.connect(stance_changed.emit)
+	button_2.stance_changed.connect(stance_changed.emit)
 	button_1.pressed.connect(hide_button)
 	button_2.pressed.connect(hide_button)
 
