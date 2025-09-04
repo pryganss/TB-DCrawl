@@ -23,7 +23,9 @@ var MAX_HP: int:
 var hp: int:
 	set(value):
 		hp = min(value, MAX_HP)
-		if hp <= 0: die()
+		if hp <= 0 && not dying:
+			dying = true
+			die()
 		damaged.emit()
 
 var BASE_ARMOR: int:
@@ -33,6 +35,8 @@ var BASE_ARMOR: int:
 var armor: int:
 	set(value):
 		armor = max(value, 0)
+
+var dying = false
 
 var stance: Stance
 

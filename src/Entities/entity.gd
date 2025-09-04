@@ -23,6 +23,7 @@ func _init(entity_definition: EntityDefinition, start_pos: Vector2i):
 		add_child(new_component)
 
 func flash(color: Color):
+	if not is_inside_tree(): return
 	modulate = color
 	await get_tree().create_timer(0.1).timeout
 	modulate = Color.WHITE
