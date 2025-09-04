@@ -35,6 +35,8 @@ func hit(target: FighterComponent) -> int:
 		if status:
 			for st in status:
 				stat.STATUS[st.status].call(target.entity, st.duration)
+	else:
+		target.entity.flash(Color.LIGHT_GRAY)
 
 	attack_ended.emit({"target": target, "damage": damage_dealt}, "attack_ended")
 
