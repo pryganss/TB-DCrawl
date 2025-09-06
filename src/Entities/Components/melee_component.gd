@@ -8,10 +8,13 @@ var BASE_MOD: int
 var damage: Array[String]
 var mod: int
 
+var damage_dealt = 0
+
 var status: Array[StatusDefinition]
 
 signal attack_started(_args: Array)
 signal attack_ended(_args: Array)
+signal attack_hit(_args: Array, signal_name: String)
 
 func _init(component_definition: MeleeComponentDefinition):
 	super._init(component_definition)
@@ -25,12 +28,11 @@ func hit(target: FighterComponent) -> int:
 	var fighter_component: FighterComponent = entity.components.get(cpnt.FIGHTER)
 	if not fighter_component: return 0
 
-	var damage_dealt = 0
-
 	attack_started.emit({"target": target}, "attack_started")
 
 	if Attack.to_hit(fighter_component.level - target.level):
 		damage_dealt = Attack.damage(damage, mod)
+		attack_hit.emit({"target": target, "damage": damage_dealt}, "attack_hit")
 		target.damage(damage_dealt, Color.RED)
 		if status:
 			for st in status:
@@ -42,4 +44,5 @@ func hit(target: FighterComponent) -> int:
 
 	damage = BASE_DAMAGE
 	mod = BASE_MOD
+	damage_dealt = 0
 	return delay
