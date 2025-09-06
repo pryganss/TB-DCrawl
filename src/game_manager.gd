@@ -77,7 +77,7 @@ func _new_stance():
 
 	$"UI/New Stance UI".new_stance(stance_1, stance_2)
 
-	stance_timer = randi_range(2, 5)
+	stance_timer = randi_range(3, 5)
 
 func _decrement_stance(_args, _signal_name):
 	stance_timer -= 1
