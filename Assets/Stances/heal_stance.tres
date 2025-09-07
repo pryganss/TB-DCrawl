@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StanceDefinition" load_steps=5 format=3 uid="uid://buthfij2abhjp"]
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=6 format=3 uid="uid://buthfij2abhjp"]
 
 [ext_resource type="Texture2D" uid="uid://bestdxf68qh34" path="res://Assets/Icons/healing.svg" id="1_lw877"]
 [ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="1_olocj"]
@@ -6,14 +6,20 @@
 
 [sub_resource type="Resource" id="Resource_olocj"]
 script = ExtResource("2_lw877")
-duration = 2000
+duration = 500
 status = 0
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
+[sub_resource type="Resource" id="Resource_lw877"]
+script = ExtResource("2_lw877")
+duration = -1
+status = 7
 metadata/_custom_type_script = "uid://bgnge8s0rq04j"
 
 [resource]
 script = ExtResource("1_olocj")
-status = Array[ExtResource("2_lw877")]([SubResource("Resource_olocj")])
+status = Array[ExtResource("2_lw877")]([SubResource("Resource_olocj"), SubResource("Resource_lw877")])
 name = "Stance of the Sage"
 icon = ExtResource("1_lw877")
-description = "Gain regen for 20 turns."
+description = "Gain regen for 5 turns and increase regen gained upon entering a new room."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"

@@ -20,7 +20,10 @@ func open_door():
 	Map.astar.set_point_solid(entity.grid_position, false)
 
 	# Heal Player
-	Map.player.components.get(cpnt.FIGHTER).hp += 5
+	if Map.player.components.get(cpnt.FIGHTER).status.any(func(s): return s is BuffDoorHealingStatus):
+		Map.player.components.get(cpnt.FIGHTER).hp += 10
+	else:
+		Map.player.components.get(cpnt.FIGHTER).hp += 7
 
 	entity.queue_free()
 	pass
