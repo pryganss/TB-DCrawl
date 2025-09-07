@@ -17,13 +17,14 @@ func _init(entity_definition: EntityDefinition, start_pos: Vector2i):
 	texture = entity_definition.texture
 	blocker = entity_definition.blocker
 
-	if blocker:
-		Map.astar.set_point_solid(grid_position)
-
 	for component in entity_definition.components:
 		var new_component = component.get_component()
 		components[new_component.TYPE] = new_component
 		add_child(new_component)
+
+func _ready():
+	if blocker && self != Map.player:
+		Map.astar.set_point_solid(grid_position)
 
 func flash(color: Color):
 	if not is_inside_tree(): return

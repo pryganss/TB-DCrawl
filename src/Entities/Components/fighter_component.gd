@@ -74,7 +74,7 @@ func die():
 	if wield_component:
 		wield_component.drop_item()
 
-	if entity.blocker:
+	if entity.blocker && entity != Map.player:
 		Map.astar.set_point_solid(entity.grid_position, false)
 
 	died.emit({"entity": entity}, "died")
