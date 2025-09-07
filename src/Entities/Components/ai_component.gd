@@ -22,6 +22,8 @@ func get_action() -> Action:
 
 
 func _get_step_to_location(target: Vector2i) -> Vector2i:
-	var step = Map.astar.get_id_path(entity.grid_position, target, true)[1]
+	var steps = Map.astar.get_id_path(entity.grid_position, target, true)
 
-	return step
+	if steps.size() > 1:
+		return steps[1]
+	return steps[0]

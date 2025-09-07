@@ -13,6 +13,9 @@ func move(target_position: Vector2i):
 	if Map.get_tile(target_position).get_custom_data("WALKABLE"):
 		if blockers.any(func(e: Entity): return e.blocker):
 			return 0
+		if entity.blocker:
+			Map.astar.set_point_solid(entity.grid_position, false)
+			Map.astar.set_point_solid(target_position)
 		entity.grid_position = target_position
 	elif door_component:
 		door_component.open_door()
