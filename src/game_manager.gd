@@ -50,7 +50,7 @@ func connect_player():
 
 func reset(_args: Dictionary, _signal_name = "unnamed_signal"):
 	Map.current_floor = 0
-	get_tree().change_scene_to_file("res://src/UI/main_menu.tscn")
+	get_tree().change_scene_to_file("res://src/UI/death.tscn")
 
 func _physics_process(_delta):
 	var entity = Initiative.get_current_turn()

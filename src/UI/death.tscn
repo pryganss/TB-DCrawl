@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7u52agt15o83"]
+
+[ext_resource type="PackedScene" uid="uid://cwn6chugt0ph5" path="res://src/UI/main_menu.tscn" id="1_xfjpa"]
+
+[node name="Main Menu" instance=ExtResource("1_xfjpa")]
+
+[node name="Title" parent="." index="1"]
+text = "YOU DIED"
+
+[node name="Subtitle" parent="." index="2"]
+text = "Yet Another Sad Death"
+
+[node name="Start Button" parent="Menu Buttons" index="0"]
+text = "Restart"
