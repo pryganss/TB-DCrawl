@@ -15,5 +15,5 @@ script = ExtResource("1_l0oqk")
 status = Array[ExtResource("2_03cxt")]([SubResource("Resource_l0oqk")])
 name = "Bloodthief Stance"
 icon = ExtResource("1_03cxt")
-description = "Gain life based on damage dealt."
+description = "Gain life based on damage dealt scaling based on your level. A hit always restores a minimun of 1 health."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"

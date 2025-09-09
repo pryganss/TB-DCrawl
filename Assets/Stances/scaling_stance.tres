@@ -15,5 +15,5 @@ script = ExtResource("1_n7uln")
 status = Array[ExtResource("2_hlt7f")]([SubResource("Resource_n7uln")])
 name = "Flurry Stance"
 icon = ExtResource("1_hlt7f")
-description = "Gain temporary attack damage on hit (damage reduces when not attacking)."
+description = "Gain attack damage scaling on hit. Faster weapons scale more damage each attack."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"

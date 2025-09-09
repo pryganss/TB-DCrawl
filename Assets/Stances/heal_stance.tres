@@ -21,5 +21,5 @@ script = ExtResource("1_olocj")
 status = Array[ExtResource("2_lw877")]([SubResource("Resource_olocj"), SubResource("Resource_lw877")])
 name = "Stance of the Sage"
 icon = ExtResource("1_lw877")
-description = "Gain regen for 5 turns and increase regen gained upon entering a new room."
+description = "Gain regen for 5 turns and increase health gained upon entering a new room."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"

@@ -15,5 +15,5 @@ script = ExtResource("1_4k2j8")
 status = Array[ExtResource("2_xb16g")]([SubResource("Resource_4k2j8")])
 name = "Sword Cleaver Stance"
 icon = ExtResource("1_xb16g")
-description = "Gain armor based on the damage dealt by your last weapon attack"
+description = "Gain armor based on the damage dealt by your last weapon attack. The armor has a multiplier that is higher for mid-speed weapons."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"
