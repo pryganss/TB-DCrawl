@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=5 format=3 uid="uid://bdx0rxx41ea0m"]
+
+[ext_resource type="Texture2D" uid="uid://du0d2on67b3vc" path="res://Assets/Icons/cobra.svg" id="1_lon0l"]
+[ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="2_3foej"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="3_2f661"]
+
+[sub_resource type="Resource" id="Resource_3foej"]
+script = ExtResource("3_2f661")
+duration = -1
+status = 9
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
+[resource]
+script = ExtResource("2_3foej")
+status = Array[ExtResource("3_2f661")]([SubResource("Resource_3foej")])
+name = "Stance of the Brigand"
+icon = ExtResource("1_lon0l")
+description = "Hitting attacks has a chance of applying poison increasing with level."
+metadata/_custom_type_script = "uid://cojmli4pgkhte"
