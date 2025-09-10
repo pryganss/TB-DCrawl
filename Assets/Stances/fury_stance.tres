@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=5 format=3 uid="uid://c5ibagh46icd"]
+
+[ext_resource type="Texture2D" uid="uid://bxn026fdhsnt0" path="res://Assets/Icons/ragged-wound.svg" id="1_6lnb4"]
+[ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="2_2qdvb"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="3_efc3h"]
+
+[sub_resource type="Resource" id="Resource_6lnb4"]
+script = ExtResource("3_efc3h")
+duration = -1
+status = 8
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
+[resource]
+script = ExtResource("2_2qdvb")
+status = Array[ExtResource("3_efc3h")]([SubResource("Resource_6lnb4")])
+name = "Stance of the Dying"
+icon = ExtResource("1_6lnb4")
+description = "Gain a damage multiplier based on lost health."
+metadata/_custom_type_script = "uid://cojmli4pgkhte"
