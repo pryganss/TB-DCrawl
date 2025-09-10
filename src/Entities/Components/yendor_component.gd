@@ -10,3 +10,9 @@ func _init(_component_definition: ComponentDefinition):
 func win(args: Dictionary, _signal_name):
 	if args["entity"].grid_position == entity.grid_position:
 		Map.win()
+
+func _ready():
+	entity.ready.connect(entity_ready)
+
+func entity_ready():
+	entity.z_index = -1

@@ -11,3 +11,9 @@ func descend(args: Dictionary, _signal_name):
 	if args["entity"].grid_position == entity.grid_position:
 		Map.current_floor += 1
 		Map.new_level()
+
+func _ready():
+	entity.ready.connect(entity_ready)
+
+func entity_ready():
+	entity.z_index = -1
