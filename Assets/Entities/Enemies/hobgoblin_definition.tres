@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://dpy8seg2we2sy"
 
 [sub_resource type="Resource" id="Resource_hlih8"]
 script = ExtResource("6_nrxju")
-delay = 100
+delay = 110
 metadata/_custom_type_script = "uid://t8f5o03rs37r"
 
 [sub_resource type="Resource" id="Resource_agqyx"]

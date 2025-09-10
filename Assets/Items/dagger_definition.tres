@@ -8,8 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_hdhok"]
 script = ExtResource("2_hdhok")
-damage = Array[String](["1d3"])
-mod = 1
+damage = Array[String](["1d2"])
+mod = 2
 status = Array[ExtResource("3_s3fhs")]([])
 delay = 80
 metadata/_custom_type_script = "uid://dpy8seg2we2sy"
