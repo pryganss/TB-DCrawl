@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=8 format=3 uid="uid://c6gou6bjgpcjw"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_w7aec"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="2_0r1wa"]
+[ext_resource type="Script" uid="uid://dc7p4trvm8ub" path="res://src/Items/item_definition.gd" id="2_ldhdb"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="3_e26yj"]
+[ext_resource type="Texture2D" uid="uid://bs2jaln6ch3ba" path="res://32rogues/items.png" id="5_ivtjf"]
+
+[sub_resource type="Resource" id="Resource_of300"]
+script = ExtResource("2_0r1wa")
+damage = Array[String](["2d4"])
+mod = 0
+status = Array[ExtResource("3_e26yj")]([])
+delay = 80
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fl1w"]
+atlas = ExtResource("5_ivtjf")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_ldhdb")
+components = Array[ExtResource("1_w7aec")]([SubResource("Resource_of300")])
+texture = SubResource("AtlasTexture_7fl1w")
+metadata/_custom_type_script = "uid://dc7p4trvm8ub"

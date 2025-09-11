@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=4 format=3 uid="uid://hkst3yfbf66o"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_gk1g7"]
+[ext_resource type="Resource" uid="uid://b6m7s0nlqcyk4" path="res://Assets/Entities/Enemies/skeleton_definiton.tres" id="2_g06rk"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_l1ns2"]
+
+[resource]
+script = ExtResource("2_l1ns2")
+features = Array[ExtResource("1_gk1g7")]([ExtResource("2_g06rk")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

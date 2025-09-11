@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=9 format=3 uid="uid://dd065r1scdf6l"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_ntngn"]
+[ext_resource type="Resource" uid="uid://dxnissqx3tx4r" path="res://Assets/Entities/Enemies/goblin_definition.tres" id="2_r0fsy"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_sr17e"]
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="3_g5k4m"]
+[ext_resource type="Resource" uid="uid://c6gou6bjgpcjw" path="res://Assets/Items/dagger_upgrade_definition.tres" id="4_vbqhq"]
+[ext_resource type="Script" uid="uid://cvvmd65n8jknf" path="res://src/Entities/Components/Definitions/item_component_definition.gd" id="5_s1rfc"]
+
+[sub_resource type="Resource" id="Resource_h2874"]
+script = ExtResource("5_s1rfc")
+item_definition = ExtResource("4_vbqhq")
+metadata/_custom_type_script = "uid://cvvmd65n8jknf"
+
+[sub_resource type="Resource" id="Resource_lotnq"]
+script = ExtResource("1_ntngn")
+blocker = false
+components = Array[ExtResource("3_g5k4m")]([SubResource("Resource_h2874")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
+
+[resource]
+script = ExtResource("2_sr17e")
+features = Array[ExtResource("1_ntngn")]([ExtResource("2_r0fsy"), ExtResource("2_r0fsy"), ExtResource("2_r0fsy"), ExtResource("2_r0fsy"), SubResource("Resource_lotnq")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

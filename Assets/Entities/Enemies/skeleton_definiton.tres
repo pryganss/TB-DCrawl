@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=17 format=3 uid="uid://b6m7s0nlqcyk4"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_w47n8"]
+[ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="2_gxxkj"]
+[ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="3_at758"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="4_klm66"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="5_an8iy"]
+[ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="6_m4yk2"]
+[ext_resource type="Resource" uid="uid://dv8ldja37jff1" path="res://Assets/Items/sword_upgrade_definition.tres" id="7_r7sim"]
+[ext_resource type="Script" uid="uid://bho42oe7xr0ir" path="res://src/Entities/Components/Definitions/wield_component_definition.gd" id="8_e85h8"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="9_b2cfy"]
+[ext_resource type="Texture2D" uid="uid://bj0qeksp5gh1f" path="res://32rogues/monsters.png" id="10_1kjtp"]
+
+[sub_resource type="Resource" id="Resource_dblw5"]
+script = ExtResource("2_gxxkj")
+delay = 120
+metadata/_custom_type_script = "uid://t8f5o03rs37r"
+
+[sub_resource type="Resource" id="Resource_a4y6g"]
+script = ExtResource("3_at758")
+max_hp = 20
+level = 2
+armor = 0
+starting_status = Array[ExtResource("4_klm66")]([])
+metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
+
+[sub_resource type="Resource" id="Resource_w0cub"]
+script = ExtResource("5_an8iy")
+damage = Array[String](["1d2"])
+mod = 0
+status = Array[ExtResource("4_klm66")]([])
+delay = 100
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
+
+[sub_resource type="Resource" id="Resource_tntp4"]
+script = ExtResource("6_m4yk2")
+metadata/_custom_type_script = "uid://lv06866ab2mh"
+
+[sub_resource type="Resource" id="Resource_x5abt"]
+script = ExtResource("8_e85h8")
+item_definition = ExtResource("7_r7sim")
+delay = 100
+metadata/_custom_type_script = "uid://bho42oe7xr0ir"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ovjm"]
+atlas = ExtResource("10_1kjtp")
+region = Rect2(0, 128, 32, 32)
+
+[resource]
+script = ExtResource("9_b2cfy")
+texture = SubResource("AtlasTexture_0ovjm")
+blocker = true
+components = Array[ExtResource("1_w47n8")]([SubResource("Resource_dblw5"), SubResource("Resource_a4y6g"), SubResource("Resource_w0cub"), SubResource("Resource_tntp4"), SubResource("Resource_x5abt")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"

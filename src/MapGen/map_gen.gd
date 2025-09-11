@@ -8,6 +8,7 @@ const EXIT_ROOM: RoomDefinition = preload("res://Assets/MapGen/Rooms/exit_room.t
 const map_definitions: Array[MapDefinition] = [
 	preload("res://Assets/MapGen/floor_1.tres"),
 	preload("res://Assets/MapGen/floor_2.tres"),
+	preload("res://Assets/MapGen/floor_3.tres"),
 	]
 
 static func setup_pathfinding():

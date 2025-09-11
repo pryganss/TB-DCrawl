@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=4 format=3 uid="uid://bqvsu1n8s26q5"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_q8uv0"]
+[ext_resource type="Resource" uid="uid://bqj7hpp7ysdcl" path="res://Assets/Entities/Enemies/kobold_definition.tres" id="2_n5q0w"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_sa4b5"]
+
+[resource]
+script = ExtResource("2_sa4b5")
+features = Array[ExtResource("1_q8uv0")]([ExtResource("2_n5q0w"), ExtResource("2_n5q0w")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=6 format=3 uid="uid://cantkq4e78rdn"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_lns8o"]
+[ext_resource type="Resource" uid="uid://0l2bp8ij4a0l" path="res://Assets/Entities/Enemies/snake_definition.tres" id="2_hibgj"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_kij6l"]
+[ext_resource type="Resource" uid="uid://1sydmanu148c" path="res://Assets/Entities/Enemies/bug_definition.tres" id="3_bx0br"]
+[ext_resource type="Resource" uid="uid://bqj7hpp7ysdcl" path="res://Assets/Entities/Enemies/kobold_definition.tres" id="4_nakrf"]
+
+[resource]
+script = ExtResource("2_kij6l")
+features = Array[ExtResource("1_lns8o")]([ExtResource("2_hibgj"), ExtResource("2_hibgj"), ExtResource("3_bx0br"), ExtResource("4_nakrf")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

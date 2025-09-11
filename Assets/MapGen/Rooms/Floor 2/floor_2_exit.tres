@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=5 format=3 uid="uid://bjvtd68s0m0fa"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_2yias"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_1dsei"]
+[ext_resource type="Resource" uid="uid://bsg5dp604ynt2" path="res://Assets/Entities/stair_definition.tres" id="2_b58u2"]
+[ext_resource type="Resource" uid="uid://b6m7s0nlqcyk4" path="res://Assets/Entities/Enemies/skeleton_definiton.tres" id="3_u76a7"]
+
+[resource]
+script = ExtResource("2_1dsei")
+features = Array[ExtResource("1_2yias")]([ExtResource("2_b58u2"), ExtResource("3_u76a7"), ExtResource("3_u76a7")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

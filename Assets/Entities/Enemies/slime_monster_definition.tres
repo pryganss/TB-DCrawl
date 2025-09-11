@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=14 format=3 uid="uid://cj7a3txjfboyk"]
+
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_qgh1v"]
+[ext_resource type="Script" uid="uid://dyy58hynshsip" path="res://src/Entities/Components/Definitions/movement_component_definition.gd" id="2_cbsef"]
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="2_mwthg"]
+[ext_resource type="Texture2D" uid="uid://bj0qeksp5gh1f" path="res://32rogues/monsters.png" id="3_mwthg"]
+[ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="3_vfi5d"]
+[ext_resource type="Script" uid="uid://cc8sm5ijawq7m" path="res://src/Entities/Components/Definitions/fighter_component_definition.gd" id="4_kwak8"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="5_sfpo7"]
+[ext_resource type="Script" uid="uid://dpy8seg2we2sy" path="res://src/Entities/Components/Definitions/melee_component_definition.gd" id="6_xquwj"]
+
+[sub_resource type="Resource" id="Resource_y3t2j"]
+script = ExtResource("2_cbsef")
+delay = 200
+metadata/_custom_type_script = "uid://t8f5o03rs37r"
+
+[sub_resource type="Resource" id="Resource_nlgr5"]
+script = ExtResource("3_vfi5d")
+metadata/_custom_type_script = "uid://lv06866ab2mh"
+
+[sub_resource type="Resource" id="Resource_7xo4n"]
+script = ExtResource("4_kwak8")
+max_hp = 25
+level = 1
+armor = 0
+starting_status = Array[ExtResource("5_sfpo7")]([])
+metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
+
+[sub_resource type="Resource" id="Resource_ausko"]
+script = ExtResource("6_xquwj")
+damage = Array[String](["2d5"])
+mod = 2
+status = Array[ExtResource("5_sfpo7")]([])
+delay = 100
+metadata/_custom_type_script = "uid://dpy8seg2we2sy"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1e65"]
+atlas = ExtResource("3_mwthg")
+region = Rect2(64, 64, 32, 32)
+
+[resource]
+script = ExtResource("2_mwthg")
+texture = SubResource("AtlasTexture_w1e65")
+blocker = true
+components = Array[ExtResource("1_qgh1v")]([SubResource("Resource_y3t2j"), SubResource("Resource_nlgr5"), SubResource("Resource_7xo4n"), SubResource("Resource_ausko")])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"

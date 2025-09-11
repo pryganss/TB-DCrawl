@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="RoomDefinition" load_steps=4 format=3 uid="uid://blbjnb7xhm5vm"]
+[gd_resource type="Resource" script_class="RoomDefinition" load_steps=5 format=3 uid="uid://blbjnb7xhm5vm"]
 
 [ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_n74ri"]
 [ext_resource type="Resource" uid="uid://d0neb0svlcbh2" path="res://Assets/Entities/Enemies/bugbear_definition.tres" id="2_1e13q"]
 [ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_vnprr"]
+[ext_resource type="Resource" uid="uid://b7vm5fd1cjy0q" path="res://Assets/Entities/Enemies/hobgoblin_definition.tres" id="3_1e13q"]
 
 [resource]
 script = ExtResource("2_vnprr")
-features = Array[ExtResource("1_n74ri")]([ExtResource("2_1e13q")])
+features = Array[ExtResource("1_n74ri")]([ExtResource("2_1e13q"), ExtResource("3_1e13q")])
 metadata/_custom_type_script = "uid://r0iqt0vhc8v1"

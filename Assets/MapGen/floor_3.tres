@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MapDefinition" load_steps=16 format=3 uid="uid://cwgdbm6jkqopj"]
+
+[ext_resource type="Script" uid="uid://b7urauaipbtpo" path="res://src/Entities/entity_definition.gd" id="1_lg2jb"]
+[ext_resource type="Script" uid="uid://r0iqt0vhc8v1" path="res://src/MapGen/room_definition.gd" id="2_bf2j6"]
+[ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="2_hj4q5"]
+[ext_resource type="Texture2D" uid="uid://bs2jaln6ch3ba" path="res://32rogues/items.png" id="3_dvb2k"]
+[ext_resource type="Script" uid="uid://bhm3bql3b201q" path="res://src/MapGen/map_definition.gd" id="3_lg2jb"]
+[ext_resource type="Resource" uid="uid://1sydmanu148c" path="res://Assets/Entities/Enemies/bug_definition.tres" id="4_4lu4j"]
+[ext_resource type="Resource" uid="uid://hkst3yfbf66o" path="res://Assets/MapGen/Rooms/Floor 2/skeleton_room.tres" id="5_87e1q"]
+[ext_resource type="Resource" uid="uid://dd065r1scdf6l" path="res://Assets/MapGen/Rooms/Floor 2/dagger_room.tres" id="6_4lu4j"]
+[ext_resource type="Resource" uid="uid://d2jqn0lw0wtho" path="res://Assets/MapGen/Rooms/Floor 2/big_snake_room.tres" id="7_3lwy3"]
+[ext_resource type="Resource" uid="uid://b3art1vwsngnf" path="res://Assets/MapGen/Rooms/Floor 3/slime_monster_room.tres" id="9_3lwy3"]
+[ext_resource type="Resource" uid="uid://cantkq4e78rdn" path="res://Assets/MapGen/Rooms/Floor 3/big_poison_room.tres" id="10_ilugv"]
+[ext_resource type="Resource" uid="uid://bqvsu1n8s26q5" path="res://Assets/MapGen/Rooms/Floor 3/kobold_room.tres" id="11_81fln"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87e1q"]
+atlas = ExtResource("3_dvb2k")
+region = Rect2(64, 512, 32, 32)
+
+[sub_resource type="Resource" id="Resource_4lu4j"]
+script = ExtResource("1_lg2jb")
+texture = SubResource("AtlasTexture_87e1q")
+blocker = true
+components = Array[ExtResource("2_hj4q5")]([])
+metadata/_custom_type_script = "uid://b7urauaipbtpo"
+
+[sub_resource type="Resource" id="Resource_3lwy3"]
+script = ExtResource("2_bf2j6")
+features = Array[ExtResource("1_lg2jb")]([SubResource("Resource_4lu4j"), ExtResource("4_4lu4j")])
+metadata/_custom_type_script = "uid://r0iqt0vhc8v1"
+
+[resource]
+script = ExtResource("3_lg2jb")
+room_types = Array[ExtResource("2_bf2j6")]([ExtResource("5_87e1q"), ExtResource("5_87e1q"), ExtResource("5_87e1q"), ExtResource("6_4lu4j"), ExtResource("7_3lwy3"), ExtResource("7_3lwy3"), ExtResource("9_3lwy3"), ExtResource("10_ilugv"), ExtResource("11_81fln"), ExtResource("11_81fln")])
+exit_room = SubResource("Resource_3lwy3")
+number_of_rooms = 5
+metadata/_custom_type_script = "uid://bhm3bql3b201q"
