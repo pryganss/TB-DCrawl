@@ -12,6 +12,7 @@ enum STATUS_ENUM {
 	BUFF_DOOR_HEALING_STATUS,
 	FURY_STATUS,
 	POISONER_STATUS,
+	ACCURACY_STATUS,
 	}
 
 var STATUS: Dictionary[STATUS_ENUM, Callable] = {
@@ -25,4 +26,5 @@ var STATUS: Dictionary[STATUS_ENUM, Callable] = {
 	STATUS_ENUM.BUFF_DOOR_HEALING_STATUS : BuffDoorHealingStatus.new,
 	STATUS_ENUM.FURY_STATUS : FuryStatus.new,
 	STATUS_ENUM.POISONER_STATUS : PoisonerStatus.new,
+	STATUS_ENUM.ACCURACY_STATUS : AccuracyStatus.new,
 	}

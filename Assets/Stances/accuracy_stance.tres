@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=5 format=3 uid="uid://biqms63mow08o"]
+
+[ext_resource type="Texture2D" uid="uid://cebbd6yh8hqg0" path="res://Assets/Icons/crosshair-arrow.svg" id="1_d6m0t"]
+[ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="2_5ca4c"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="3_o5h2o"]
+
+[sub_resource type="Resource" id="Resource_d6m0t"]
+script = ExtResource("3_o5h2o")
+duration = -1
+status = 10
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
+[resource]
+script = ExtResource("2_5ca4c")
+status = Array[ExtResource("3_o5h2o")]([SubResource("Resource_d6m0t")])
+name = "Precision Stance"
+icon = ExtResource("1_d6m0t")
+description = "If an attack would miss, there is a 50% chance it will hit instead. If it would normally hit, it does extra damage increasing with level."
+metadata/_custom_type_script = "uid://cojmli4pgkhte"

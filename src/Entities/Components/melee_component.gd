@@ -12,6 +12,8 @@ var damage_dealt = 0
 
 var status: Array[StatusDefinition]
 
+var rolled_hit: bool = false
+
 signal attack_started(_args: Array)
 signal attack_ended(_args: Array)
 signal attack_hit(_args: Array, signal_name: String)
@@ -28,9 +30,11 @@ func hit(target: FighterComponent) -> int:
 	var fighter_component: FighterComponent = entity.components.get(cpnt.FIGHTER)
 	if not fighter_component: return 0
 
+	rolled_hit = Attack.to_hit(fighter_component.level - target.level)
+
 	attack_started.emit({"target": target}, "attack_started")
 
-	if Attack.to_hit(fighter_component.level - target.level):
+	if rolled_hit:
 		damage_dealt = Attack.damage(damage, mod)
 		attack_hit.emit({"target": target, "damage": damage_dealt}, "attack_hit")
 		target.damage(damage_dealt, Color.RED)
