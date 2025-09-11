@@ -40,6 +40,8 @@ var dying = false
 
 var stance: Stance
 
+var damage_taken: int
+
 func _init(component_definition: FighterComponentDefinition):
 	MAX_HP = component_definition.max_hp
 	hp = MAX_HP
@@ -53,8 +55,8 @@ func _init(component_definition: FighterComponentDefinition):
 				stat.STATUS[st.status].call(entity, st.duration))
 
 func damage(value: int, color: Color, ignore_armor: = false):
+	damage_taken = value
 	damage_started.emit({"amount": value, "entity": entity}, "damage_started")
-	var damage_taken := value
 	if not ignore_armor:
 		damage_taken = ceili(value / (1.0 + (armor / 10.0)))
 	hp -= damage_taken

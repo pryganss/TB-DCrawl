@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StanceDefinition" load_steps=5 format=3 uid="uid://dxmnisumyuaxt"]
+
+[ext_resource type="Texture2D" uid="uid://bxx7mguyl7res" path="res://Assets/Icons/sprint.svg" id="1_3lie2"]
+[ext_resource type="Script" uid="uid://cojmli4pgkhte" path="res://src/Stances/stance_definition.gd" id="2_3myt1"]
+[ext_resource type="Script" uid="uid://bgnge8s0rq04j" path="res://src/Entities/Status/status_defintion.gd" id="3_qappu"]
+
+[sub_resource type="Resource" id="Resource_3lie2"]
+script = ExtResource("3_qappu")
+duration = -1
+status = 11
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
+[resource]
+script = ExtResource("2_3myt1")
+status = Array[ExtResource("3_qappu")]([SubResource("Resource_3lie2")])
+name = "Quickfoot Stance"
+icon = ExtResource("1_3lie2")
+description = "If an attack would hit you, there is a 50% chance it will miss instead."
+metadata/_custom_type_script = "uid://cojmli4pgkhte"
