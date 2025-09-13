@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://t8f5o03rs37r"
 script = ExtResource("3_at758")
 max_hp = 20
 level = 2
-armor = 0
+armor = 10
 starting_status = Array[ExtResource("4_klm66")]([])
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
 

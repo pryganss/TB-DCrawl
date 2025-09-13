@@ -38,6 +38,7 @@ func connect_player():
 			if st is XPStatus:
 				$"UI/Xp Indicator".xp_status = st
 				st.xp_updated.connect($"UI/Xp Indicator"._update_xp)
+				$"UI/Xp Indicator"._update_xp()
 				break
 
 	if Map.player.is_node_ready():

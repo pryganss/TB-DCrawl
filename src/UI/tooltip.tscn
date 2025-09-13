@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://emh6nwo1ydik"]
 
-[ext_resource type="Script" uid="uid://nocpug3c14e" path="res://src/UI/tooltip.gd" id="1_klku5"]
+[ext_resource type="Script" path="res://src/UI/tooltip.gd" id="1_klku5"]
 
 [node name="Tooltip" type="VBoxContainer"]
 offset_right = 271.0

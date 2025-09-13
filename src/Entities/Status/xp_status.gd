@@ -28,5 +28,5 @@ func level_up():
 	fighter_component.level += 1
 	fighter_component.MAX_HP += fighter_component.level * 5
 	fighter_component.hp += fighter_component.level * 5
-	fighter_component.BASE_ARMOR += 2
-	fighter_component.armor += 2
+	fighter_component.BASE_ARMOR += fighter_component.level * 2
+	fighter_component.armor += fighter_component.level * 2

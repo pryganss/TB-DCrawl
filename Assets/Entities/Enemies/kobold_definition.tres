@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=17 format=3 uid="uid://bqj7hpp7ysdcl"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=18 format=3 uid="uid://bqj7hpp7ysdcl"]
 
 [ext_resource type="Script" uid="uid://cm66je2ta2wej" path="res://src/Entities/Components/Definitions/component_definition.gd" id="1_fjpa7"]
 [ext_resource type="Script" uid="uid://lv06866ab2mh" path="res://src/Entities/Components/Definitions/ai_component_definition.gd" id="2_inp7y"]
@@ -15,17 +15,23 @@
 script = ExtResource("2_inp7y")
 metadata/_custom_type_script = "uid://lv06866ab2mh"
 
+[sub_resource type="Resource" id="Resource_inp7y"]
+script = ExtResource("4_tifcl")
+duration = -1
+status = 9
+metadata/_custom_type_script = "uid://bgnge8s0rq04j"
+
 [sub_resource type="Resource" id="Resource_0dgu0"]
 script = ExtResource("3_3tj0c")
 max_hp = 15
 level = 2
-armor = 3
-starting_status = Array[ExtResource("4_tifcl")]([])
+armor = 10
+starting_status = Array[ExtResource("4_tifcl")]([SubResource("Resource_inp7y")])
 metadata/_custom_type_script = "uid://cc8sm5ijawq7m"
 
 [sub_resource type="Resource" id="Resource_ro304"]
 script = ExtResource("5_odig6")
-delay = 100
+delay = 110
 metadata/_custom_type_script = "uid://t8f5o03rs37r"
 
 [sub_resource type="Resource" id="Resource_3bjdt"]

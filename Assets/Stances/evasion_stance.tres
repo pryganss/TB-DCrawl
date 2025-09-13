@@ -15,5 +15,5 @@ script = ExtResource("2_3myt1")
 status = Array[ExtResource("3_qappu")]([SubResource("Resource_3lie2")])
 name = "Quickfoot Stance"
 icon = ExtResource("1_3lie2")
-description = "If an attack would hit you, there is a 50% chance it will miss instead."
+description = "If an attack would hit you, there is a 70% chance it will miss instead."
 metadata/_custom_type_script = "uid://cojmli4pgkhte"

@@ -9,4 +9,4 @@ func apply(_args, _signal_name = "unnamed_signal"):
 	else:
 		var fighter_component = entity.components.get(cpnt.FIGHTER) as FighterComponent
 		await melee_component.attack_hit
-		melee_component.damage_dealt += ceili(float(melee_component.damage_dealt) * (float(fighter_component.level) / (2.0 + float(fighter_component.level))))
+		melee_component.damage_dealt += ceili(float(melee_component.damage_dealt) * (float(fighter_component.level) / (2.0 + float(fighter_component.level))) * max(((130 - float(melee_component.delay)) / 30), 0))
